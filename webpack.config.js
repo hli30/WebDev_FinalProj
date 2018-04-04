@@ -7,7 +7,10 @@ const HTMLWebpackPluginConfig = new HTMLWebpackPlugin({
 });
 
 module.exports = {
-  entry: __dirname + '/app/index.js',
+  entry: [
+    'webpack-dev-server/client?http://localhost:3000',
+    __dirname + '/app/index.js'
+  ],
   module: {
     rules: [
       {
@@ -16,13 +19,13 @@ module.exports = {
         loader: 'babel-loader'
       },
       {
-        test: /\.sass$/,
-        loaders: ['style-loader', 'css-loder', 'sass-loader']
+        test: /\.scss$/,
+        loaders: ['style-loader', 'css-loader', 'sass-loader']
       }
     ]
   },
   output: {
-    filename: 'transformed.js',
+    filename: 'bundle.js',
     path: __dirname + '/build'
   },
   plugins: [HTMLWebpackPluginConfig],

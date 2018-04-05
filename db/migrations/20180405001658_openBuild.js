@@ -12,18 +12,27 @@ exports.up = function(knex, Promise) {
       table.increments('id');
       table.integer('user_id').unsigned();
       table.foreign('user_id').references('users.id');
-      table.float('price_per_contract',2).notNullable();
       table.datetime('expiry_date').notNullable();
-      table.integer('qty').notNullable();
-      table.enu('type', ['call', 'put']).notNullable();
+      table.enu('type', ['Call', 'Put']).notNullable();
       table.float('strike_price',2).notNullable();
-      table.string('symbol', 10).notNullable();
+      table.string('underlying', 10).notNullable();
+    }),
+    knex.schema.createTable('trade_types', (table) => {
+      table.increments('id');
+      table.string('type').notNullable();
+      table.string('table_name').notNullable();
     }),
     knex.schema.createTable('trades', (table) => {
       table.increments('id');
       table.integer('user_id').unsigned();
       table.foreign('user_id').references('users.id');
-      table.string('type');
+      table.integer('trade_type_id').unsigned;
+      table.foreign('trade_type_id').references('trade_types.id');
+      table.datetime('transaction_date').notNullable();
+      table.integer('qty').notNullable();
+      table.float('price',5).notNullable();
+      table.enu('action', ['Buy','Sell']).notNullable();
+      table.integer('type_reference_id').notNullable();
     })
   ])
 };

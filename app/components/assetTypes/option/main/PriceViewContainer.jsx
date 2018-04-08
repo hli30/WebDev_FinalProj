@@ -5,14 +5,18 @@ import ExamineList from './priceView/ExamineList.jsx';
 import BlackScholes from './priceView/BlackScholes.jsx';
 
 export default class PriceViewContainer extends Component {
+
   render () {
     return (
       <div>
         <OptionChain/>
-        <WatchList/>
+        <WatchList 
+          addToWatchList={this.props.addToWatchList}
+          watchList={this.props.watchList}
+        />
         <BlackScholes/>
         <ExamineList/>
-      </div>   
+      </div>
     )
   }
 }

@@ -36,13 +36,10 @@ app.get('/', (req, res) => {
       if (err) {
         res.status(500).send('Error');
       } else {
-        res.type('json');
-        res.send (optionList.buildOptionList(tradierResponse.text));
+        res.type('json').send (optionList.buildOptionList(tradierResponse.text));
       }
     });
 });
-
-app.listen(3001, () => console.log('app listening on 3001'));
 
 app.get('/symbol/:ticker', (req, res) => {
   const query = {symbols: req.params.ticker};
@@ -56,3 +53,4 @@ app.get('/symbol/:ticker', (req, res) => {
     })
 });
 
+app.listen(3001, () => console.log('app listening on 3001'));

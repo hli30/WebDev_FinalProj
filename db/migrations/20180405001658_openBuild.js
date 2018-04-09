@@ -27,7 +27,7 @@ exports.up = function(knex, Promise) {
       table.integer('user_id').unsigned();
       table.foreign('user_id').references('users.id');
       table.integer('trade_type_id').unsigned;
-      table.foreign('trade_type_id').references('trade_types.id');
+      table.foreign('trade_type_id').references('trade_types.id'); 
       table.datetime('transaction_date').notNullable();
       table.integer('qty').notNullable();
       table.float('price',5).notNullable();

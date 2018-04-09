@@ -49,10 +49,6 @@ export default class WatchList extends Component {
             value={this.state.symbol}
             onChange={this.symbolInputHandler}
           />
-          <select onChange={this.expiryChangeHandler}>
-            <option defaultValue="April-20-2018">April-20-2018</option>
-            <option value="April-27-2018">April-27-2018</option>
-          </select>
           <input type="submit" value="Add"/>
         </form>
 

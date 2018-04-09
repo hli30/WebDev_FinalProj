@@ -1,15 +1,27 @@
-import React from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
-export default function WatchListRow ({symbol, price, change, pctChange}) {
-  return(
-    <tr>
-      <td>{symbol}</td>
-      <td>{price}</td>
-      <td>{change}</td>
-      <td>{pctChange}</td>
-    </tr>
-  )
+export default class WatchListRow extends Component {
+  constructor (props) {
+    super(props);
+    this.symbolClickHandler = this.symbolClickHandler.bind(this);
+  }
+
+  symbolClickHandler (e) {
+    e.preventDefault();
+    console.log(e.target.innerText + ' clicked');
+  }
+
+  render () {
+    return (
+      <tr>
+        <td onClick={this.symbolClickHandler}>{this.props.symbol}</td>
+        <td>{this.props.price}</td>
+        <td>{this.props.change}</td>
+        <td>{this.props.pctChange}</td>
+      </tr>
+    )
+  }
 }
 
 WatchListRow.propTypes = {

@@ -10,10 +10,11 @@ export default class AssetTypeContainer extends Component {
       options:[]
     }
     this.addToWatchList = this.addToWatchList.bind(this);
+    this.getOptionChain = this.getOptionChain.bind(this);
   }
 
-  addToWatchList (symbol, expiry) {
-    let newEntry = [symbol, expiry];
+  addToWatchList (symbol) {
+    let newEntry = {symbol};
     this.setState({options: this.state.options.concat(newEntry)})
     request
       .get('http://localhost:3001/symbol/' + symbol)
@@ -33,11 +34,16 @@ export default class AssetTypeContainer extends Component {
       });
   }
 
+  getOptionChain (symbol, expiry) {
+    
+  }
+
   render () {
     return (
       <div>
         <PriceViewContainer 
           addToWatchList={this.addToWatchList}
+          getOptionChain={this.getOptionChain}
           watchList={this.state.watchList}
         />
       </div>   

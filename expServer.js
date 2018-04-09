@@ -1,10 +1,10 @@
 // import express from 'express';
 const express = require('express');
 const request = require('superagent');
-const optionList = require('./src/optionList')
+const optionList = require('./src/optionList');
 
 // import request from 'superagent';
-require('dotenv').config()
+require('dotenv').config();
 const app = express();
 
 const TRADIER_ENDPOINT = 'https://sandbox.tradier.com/v1/'
@@ -29,6 +29,7 @@ app.use((req, res, next) => {
   next();
 });
 
+
 app.get('/', (req, res) => {
   const query = {symbol: 'goog', expiration: '2018-04-20'};
   makeTradierQuery(TRADIER_OPTIONS_PATH, query)
@@ -52,5 +53,6 @@ app.get('/symbol/:ticker', (req, res) => {
       }
     })
 });
+
 
 app.listen(3001, () => console.log('app listening on 3001'));

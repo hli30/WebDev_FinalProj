@@ -8,6 +8,12 @@ exports.up = function(knex, Promise) {
       table.string('email').notNullable();
       table.string('password').notNullable();
     }),
+    knex.schema.createTable('watchLists', (table) => {
+      table.increments('id');
+      table.integer('user_id').unsigned();
+      table.foreign('user_id').references('users.id');
+      table.string('symbol').notNullable();
+    }),
     knex.schema.createTable('options', (table) => {
       table.increments('id');
       table.integer('user_id').unsigned();
@@ -39,8 +45,10 @@ exports.up = function(knex, Promise) {
 
 exports.down = function(knex, Promise) {
   return Promise.all([
-    knex.schema.dropTable('options'),
     knex.schema.dropTable('trades'),
+    knex.schema.dropTable('trade_types'),
+    knex.schema.dropTable('options'),
+    knex.schema.dropTable('watchLists'),
     knex.schema.dropTable('users')
   ])
 };

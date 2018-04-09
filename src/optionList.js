@@ -54,6 +54,7 @@ function buildOptionList(tradierList) {
       optionList.push(newOption);
     }
   }
+  // sort optionList;
   return optionList;
 }
 

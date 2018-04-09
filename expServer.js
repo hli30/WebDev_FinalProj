@@ -1,6 +1,8 @@
 // import express from 'express';
 const express = require('express');
 const request = require('superagent');
+const optionList = require('./src/optionList')
+
 // import request from 'superagent';
 require('dotenv').config()
 const app = express();
@@ -28,7 +30,7 @@ app.get('/', (req, res) => {
         res.status(500).send('Error');
       } else {
         res.type('json');
-        res.send(tradierResponse.text);
+        res.send (optionList.buildOptionList(tradierResponse.text));
       }
     });
 });

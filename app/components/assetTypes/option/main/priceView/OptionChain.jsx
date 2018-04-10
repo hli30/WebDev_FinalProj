@@ -7,11 +7,13 @@ export default class OptionChain extends Component {
     super(props);
     this.state = {
       symbol: '',
-      expiry: '2018-04-20'
+      expiry: '2018-04-20',
+      partialSymbol: ''
     }
     this.symbolInputHandler = this.symbolInputHandler.bind(this);
     this.expiryChangeHandler = this.expiryChangeHandler.bind(this);
     this.optionSubmitHandler = this.optionSubmitHandler.bind(this);
+    this.constructOptionObjAndPassUp = this.constructOptionObjAndPassUp.bind(this);
   }
 
   symbolInputHandler (e) {
@@ -25,6 +27,13 @@ export default class OptionChain extends Component {
   optionSubmitHandler (e) {
     e.preventDefault();
     this.props.getOptionChain(this.state.symbol, this.state.expiry);
+    this.setState({partialSymbol: this.state.symbol});
+  }
+
+  constructOptionObjAndPassUp (partialOptionObj) {
+    partialOptionObj.expiry = this.state.expiry;
+    partialOptionObj.symbol = this.state.partialSymbol;
+    this.props.addToExamineList(partialOptionObj);
   }
 
   render () {
@@ -48,7 +57,7 @@ export default class OptionChain extends Component {
       putBid={row._put._bid}
       putAsk={row._put._ask}
       putOpenInt={row._put._openInt}
-      addToExamineList={this.props.addToExamineList}  
+      constructOptionObjAndPassUp={this.constructOptionObjAndPassUp}  
     />))
 
     return (

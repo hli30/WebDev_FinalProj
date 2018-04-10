@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import PriceViewContainer from './option/main/PriceViewContainer.jsx';
 import request from 'superagent';
 
+
 export default class AssetTypeContainer extends Component {
   constructor (props) {
     super(props);
@@ -15,7 +16,7 @@ export default class AssetTypeContainer extends Component {
 
   addToWatchList (symbol) {
     request
-      .get('http://localhost:3001/symbol/' + symbol)
+      .post('http://localhost:3001/symbol/' + symbol)
       .end((err, res) => {
         if (err) {
           console.log(err.message);
@@ -41,7 +42,7 @@ export default class AssetTypeContainer extends Component {
           console.log(err.message);
         } else {
           const data = JSON.parse(res.text);
-          console.log("dlen", data.length);
+          console.log('dlen', data.length);
           this.setState({options: data});
         }
       });

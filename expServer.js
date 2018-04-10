@@ -1,9 +1,14 @@
 const express = require('express');
 const request = require('superagent');
 const optionList = require('./src/optionList');
+
+require('dotenv').config();
+const ENV = process.env.ENV || 'development';
+const knexConfig = require('./knexfile');
+const knex = require('knex')(knexConfig[ENV]);
+
 const bodyParser = require('body-parser');
 
-require('dotenv').config()
 const app = express();
 
 const TRADIER_ENDPOINT = 'https://sandbox.tradier.com/v1/'
@@ -43,7 +48,32 @@ app.post('/option', (req, res) => {
 });
 
 app.get('/symbol/:ticker', (req, res) => {
+
+  knex.select('symbol')
+    .from('watch_lists')
+    .where({user_id: 1})
+    .then(function(rows) {
+      for (let row in rows) {
+        makeTradierQuery(TRADIER_QUOTES_PATH, row.symbol)
+          .end((err, tradierResponse) => {
+            if (err) {
+              res.status(500).send('Error');
+            } else {
+              res.status(200).type('json').send(tradierResponse.text);
+            }
+          })        
+      }
+    })
+    .catch(function(error) { console.error(error); });
+
+});
+
+app.post('/symbol/:ticker', (req, res) => {
   const query = {symbols: req.params.ticker};
+  // watchList.addToWatchList(1,req.params.ticker);
+  knex('watch_lists').insert({user_id: 1, symbol: req.params.ticker}).then(function (id) {
+    console.log(id);
+  });
   makeTradierQuery(TRADIER_QUOTES_PATH, query)
     .end((err, tradierResponse) => {
       if (err) {

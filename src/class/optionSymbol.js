@@ -1,3 +1,9 @@
+Number.prototype.pad = function(size) {
+  var s = String(this);
+  while (s.length < (size || 2)) {s = '0' + s;}
+  return s;
+}
+
 class OptionSymbol {
   constructor(rootSymbol, expiry, strikePrice, option) {
     this.rootSymbol = rootSymbol;
@@ -19,7 +25,11 @@ class OptionSymbol {
   }
     
   set expiryDate(value) {
-    this._expiryDate = value;
+    const d = new Date(value);
+    const dd = d.getDate().pad(2);
+    const mm = (d.getMonth() + 1).pad(2);
+    const yy = d.getFullYear().toString().substr(2,3);
+    this._expiryDate = yy+mm+dd;
   }
   
   get strikePrice() {
@@ -29,6 +39,14 @@ class OptionSymbol {
   set strikePrice(value) {
     this._strikePrice = value;
   }
+
+  get option() {
+    return this._option;
+  }
+
+  set option(value) {
+    this._option = value[0];
+  }
     
   set fromFullSymbol(fullSymbol){
     this.rootSymbol = fullSymbol.substr(0,5);
@@ -37,7 +55,7 @@ class OptionSymbol {
   }
 
   get fullSymbol() {
-    return this.rootSymbol + this.expiryDate + this.option + (this.strikePrice * 1000).toString().padString(8,'0');
+    return this.rootSymbol + this.expiryDate + this.option + (this.strikePrice * 1000).pad(8);
   }
 }
 

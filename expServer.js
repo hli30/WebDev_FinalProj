@@ -1,6 +1,10 @@
+
+import ExamineList from './app/components/assetTypes/option/main/priceView/ExamineList';
+
 const express = require('express');
 const request = require('superagent');
 const optionList = require('./src/optionList');
+const OptionSymbol = require('./src/class/optionSymbol.js');
 
 require('dotenv').config();
 const ENV = process.env.ENV || 'development';
@@ -77,6 +81,36 @@ app.get('/symbol', (req, res) => {
 
 });
 
+app.get('/examine', (req, res) => {
+  let examine = [];
+  knex.select('rootSymbol, expiry_date, type, strike_price')
+    .from('examine_lists')
+    .where({user_id: 1})
+    .then(function(rows) {
+      for (let row of rows) {
+        let examineList = new OptionSymbol(row.rootSymbol, row.expiry_date, row.strike_price, row.type);
+        examine.push(examineList);
+      }
+    })
+    .then(function() {
+      console.log(examine[0].fullSymbol)
+      //const query = {symbols: tempString};
+      // makeTradierQuery(TRADIER_QUOTES_PATH, query)
+      //   .end((err, tradierResponse) => {
+      //     if (err) {
+      //       res.status(500).send('Error');
+      //     } else {
+      //       res.status(200).type('json').send(tradierResponse.text);
+            // console.log(tradierResponse.text);
+            // console.log(JSON.parse(tradierResponse.text));
+        //   }
+        // });
+    })
+    .catch(function(error) { console.error(error); });
+
+});
+
+
 app.post('/symbol/:ticker', (req, res) => {
   const query = {symbols: req.params.ticker};
   // watchList.addToWatchList(1,req.params.ticker);
@@ -91,6 +125,17 @@ app.post('/symbol/:ticker', (req, res) => {
         res.status(200).type('json').send(tradierResponse.text);
       }
     })
+});
+
+app.post('/examine', (req, res) => {
+  const optionSymbol = new OptionSymbol(req.body.option.symbol, req.body.option.expiry, req.body.option.strike, req.body.option.type);
+  console.log (optionSymbol.rootSymbol, optionSymbol.expiryDate, optionSymbol.option, optionSymbol.strikePrice, optionSymbol.fullSymbol);
+  knex('examine_lists')
+    .insert({user_id: 1, rootSymbol: optionSymbol.rootSymbol, expiry_date: optionSymbol.expiryDate, type: optionSymbol.option, strike_price: optionSymbol.strikePrice})
+    .then(function (id) {
+      console.log(id);
+    });
+  res.render('/examine');
 });
 
 app.listen(3001, () => console.log('app listening on 3001'));

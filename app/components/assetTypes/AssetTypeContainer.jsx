@@ -8,10 +8,12 @@ export default class AssetTypeContainer extends Component {
     super(props);
     this.state = {
       watchList: [],
-      options:[]
+      options:[],
+      examineList:[]
     }
     this.addToWatchList = this.addToWatchList.bind(this);
     this.getOptionChain = this.getOptionChain.bind(this);
+    this.addToExamineList = this.addToExamineList.bind(this);
   }
 
   addToWatchList (symbol) {
@@ -48,6 +50,21 @@ export default class AssetTypeContainer extends Component {
       });
   }
 
+  addToExamineList (option) {
+    request
+      .post('http://localhost:3001/examine')
+      .send({option})
+      .end((err, res) => {
+        if (err) {
+          console.log(err.message);
+        } else {
+          //gets the option moded symbol
+          const data = JSON.parse(res.text);
+          this.setState({examineList: this.state.options.concat(data)})
+        }
+      });
+  }
+
   render () {
     return (
       <div>
@@ -56,6 +73,8 @@ export default class AssetTypeContainer extends Component {
           getOptionChain={this.getOptionChain}
           watchList={this.state.watchList}
           optionChain={this.state.options}
+          addToExamineList={this.addToExamineList}
+          examineList={this.state.examineList}
         />
       </div>   
     )

@@ -1,8 +1,9 @@
 class OptionSymbol {
-  constructor(rootSymbol, expiry, strikePrice) {
+  constructor(rootSymbol, expiry, strikePrice, option) {
     this.rootSymbol = rootSymbol;
     this.expiryDate = expiry;
     this.strikePrice = strikePrice;
+    this.option = option;
   }
 
   get rootSymbol() {
@@ -29,12 +30,14 @@ class OptionSymbol {
     this._strikePrice = value;
   }
     
-  get fullCallSymbol() {
-    return this.rootSymbol + this.expiryDate + 'C' + (this.strikePrice * 1000).toString();
+  set fromFullSymbol(fullSymbol){
+    this.rootSymbol = fullSymbol.substr(0,5);
+    this.expiryDate = fullSymbol.substr(6, 11);
+    this.strikePrice = Number(fullSymbol.substr(13, 20)) / 1000;
   }
 
-  get fullPutSymbol() {
-    return this.rootSymbol + this.expiryDate + 'P' + (this.strikePrice * 1000).toString();
+  get fullSymbol() {
+    return this.rootSymbol + this.expiryDate + this.option + (this.strikePrice * 1000).toString().padString(8,'0');
   }
 }
 

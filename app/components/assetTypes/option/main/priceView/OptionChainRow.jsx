@@ -1,21 +1,20 @@
 import React, {Component} from 'react';
-import Proptypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 export default class OptionChainRow extends Component {
   constructor (props) {
     super(props);
-    this.leftOptionClickHandler = this.leftOptionClickHandler.bind(this);
+    this.optionClickHandler = this.optionClickHandler.bind(this);
   }
 
-  leftOptionClickHandler (e) {
-    e.preventDefault();
-    console.log(e.event)
+  optionClickHandler (e) {
+    this.props.addToExamineList(JSON.parse(e.target.value));
   }
 
   render () {
     return (
       <tr>
-        <td><button type='button' onClick={this.leftOptionClickHandler}>+</button></td>
+        <td><button type='button' value={JSON.stringify(this.props.call)} onClick={this.optionClickHandler}>+</button></td>
         <td>{this.props.callLast}</td>
         <td>{this.props.callChange}</td>
         <td>{this.props.callVol}</td>
@@ -29,24 +28,27 @@ export default class OptionChainRow extends Component {
         <td>{this.props.putBid}</td>
         <td>{this.props.putAsk}</td>
         <td>{this.props.putOpenInt}</td>
-        <td><button type='button'>+</button></td>
+        <td><button type='button' value={JSON.stringify(this.props.put)} onClick={this.optionClickHandler}>+</button></td>
       </tr>  
     )
   }
 }
 
 OptionChainRow.propTypes = {
-  callLast: Proptypes.number,
-  callChange: Proptypes.number,
-  callVol: Proptypes.number,
-  callBid: Proptypes.number,
-  callAsk: Proptypes.number,
-  callOpenInt: Proptypes.number,
-  strike: Proptypes.number,
-  putLast: Proptypes.number,
-  putChange: Proptypes.number,
-  putVol: Proptypes.number,
-  putBid: Proptypes.number,
-  putAsk: Proptypes.number,
-  putOpenInt: Proptypes.number
+  callLast: PropTypes.number,
+  callChange: PropTypes.number,
+  callVol: PropTypes.number,
+  callBid: PropTypes.number,
+  callAsk: PropTypes.number,
+  callOpenInt: PropTypes.number,
+  strike: PropTypes.number,
+  putLast: PropTypes.number,
+  putChange: PropTypes.number,
+  putVol: PropTypes.number,
+  putBid: PropTypes.number,
+  putAsk: PropTypes.number,
+  putOpenInt: PropTypes.number,
+  addToExamineList: PropTypes.func,
+  call: PropTypes.object,
+  put: PropTypes.object
 }

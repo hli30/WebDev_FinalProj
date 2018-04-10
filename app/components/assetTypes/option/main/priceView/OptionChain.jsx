@@ -25,16 +25,15 @@ export default class OptionChain extends Component {
   optionSubmitHandler (e) {
     e.preventDefault();
     this.props.getOptionChain(this.state.symbol, this.state.expiry);
-    // this.setState({symbol: ''});
   }
 
   render () {
-    console.log("rowcount:", this.props.optionChain.length);
     const optionRow = this.props.optionChain
     .sort((a, b) => a._strike - b._strike)
     .map((row) => 
     (<OptionChainRow
       key={row._strike}
+      call={row._call}
       callLast={row._call._last}
       callChange={row._call._change}
       callVol={row._call._vol}
@@ -42,12 +41,14 @@ export default class OptionChain extends Component {
       callAsk={row._call._ask}
       callOpenInt={row._call._openInt}
       strike={row._strike}
+      put={row._put}
       putLast={row._put._last}
       putChange={row._put._change}
       putVol={row._put._vol}
       putBid={row._put._bid}
       putAsk={row._put._ask}
       putOpenInt={row._put._openInt}
+      addToExamineList={this.props.addToExamineList}  
     />))
 
     return (
@@ -100,5 +101,6 @@ export default class OptionChain extends Component {
 
 OptionChain.propTypes = {
   optionChain: Proptypes.array,
-  getOptionChain: Proptypes.func
+  getOptionChain: Proptypes.func,
+  addToExamineList: Proptypes.func
 }

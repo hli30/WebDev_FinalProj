@@ -8,7 +8,7 @@ exports.up = function(knex, Promise) {
       table.string('email').notNullable();
       table.string('password').notNullable();
     }),
-    knex.schema.createTable('watchLists', (table) => {
+    knex.schema.createTable('watch_lists', (table) => {
       table.increments('id');
       table.integer('user_id').unsigned();
       table.foreign('user_id').references('users.id');

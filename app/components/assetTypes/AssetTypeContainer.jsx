@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import PriceViewContainer from './option/main/PriceViewContainer.jsx';
 import request from 'superagent';
 
+
 export default class AssetTypeContainer extends Component {
   constructor (props) {
     super(props);
@@ -17,7 +18,7 @@ export default class AssetTypeContainer extends Component {
     let newEntry = {symbol};
     this.setState({options: this.state.options.concat(newEntry)})
     request
-      .get('http://localhost:3001/symbol/' + symbol)
+      .post('http://localhost:3001/symbol/' + symbol)
       .end((err, res) => {
         if (err) {
           console.log(err.message);

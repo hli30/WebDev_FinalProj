@@ -2,6 +2,10 @@
 const express = require('express');
 const request = require('superagent');
 const optionList = require('./src/optionList');
+require('dotenv').config();
+const ENV = process.env.ENV || 'development';
+const knexConfig = require('./knexfile');
+const knex = require('knex')(knexConfig[ENV]);
 
 // import request from 'superagent';
 require('dotenv').config();
@@ -42,8 +46,12 @@ app.get('/', (req, res) => {
     });
 });
 
-app.get('/symbol/:ticker', (req, res) => {
+app.post('/symbol/:ticker', (req, res) => {
   const query = {symbols: req.params.ticker};
+  // watchList.addToWatchList(1,req.params.ticker);
+  knex('watch_lists').insert({user_id: 1, symbol: req.params.ticker}).then(function (id) {
+    console.log(id);
+  });
   makeTradierQuery(TRADIER_QUOTES_PATH, query)
     .end((err, tradierResponse) => {
       if (err) {
@@ -53,6 +61,5 @@ app.get('/symbol/:ticker', (req, res) => {
       }
     })
 });
-
 
 app.listen(3001, () => console.log('app listening on 3001'));

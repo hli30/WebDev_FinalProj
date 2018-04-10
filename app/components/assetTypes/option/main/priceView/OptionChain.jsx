@@ -35,6 +35,7 @@ export default class OptionChain extends Component {
     .map((row) => 
     (<OptionChainRow
       key={row._strike}
+      call={row._call}
       callLast={row._call._last}
       callChange={row._call._change}
       callVol={row._call._vol}
@@ -42,6 +43,7 @@ export default class OptionChain extends Component {
       callAsk={row._call._ask}
       callOpenInt={row._call._openInt}
       strike={row._strike}
+      put={row._put}
       putLast={row._put._last}
       putChange={row._put._change}
       putVol={row._put._vol}

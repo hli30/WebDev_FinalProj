@@ -4,18 +4,17 @@ import Proptypes from 'prop-types';
 export default class OptionChainRow extends Component {
   constructor (props) {
     super(props);
-    this.leftOptionClickHandler = this.leftOptionClickHandler.bind(this);
+    this.optionClickHandler = this.optionClickHandler.bind(this);
   }
 
-  leftOptionClickHandler (e) {
-    e.preventDefault();
-    console.log(e.event)
+  optionClickHandler (e) {
+    addToExamineList(JSON.parse(e.target.value));
   }
 
   render () {
     return (
       <tr>
-        <td><button type='button' onClick={this.leftOptionClickHandler}>+</button></td>
+        <td><button type='button' value={JSON.stringify(this.props.call)} onClick={this.optionClickHandler}>+</button></td>
         <td>{this.props.callLast}</td>
         <td>{this.props.callChange}</td>
         <td>{this.props.callVol}</td>
@@ -29,7 +28,7 @@ export default class OptionChainRow extends Component {
         <td>{this.props.putBid}</td>
         <td>{this.props.putAsk}</td>
         <td>{this.props.putOpenInt}</td>
-        <td><button type='button'>+</button></td>
+        <td><button type='button' value={JSON.stringify(this.props.put)} onClick={this.optionClickHandler}>+</button></td>
       </tr>  
     )
   }

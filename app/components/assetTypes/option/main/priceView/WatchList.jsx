@@ -6,8 +6,7 @@ export default class WatchList extends Component {
   constructor (props) {
     super(props);
     this.state = {
-      symbol: '',
-      expiry: 'April-20-2018'
+      symbol: ''
     }
     this.symbolInputHandler = this.symbolInputHandler.bind(this);
     this.expiryChangeHandler = this.expiryChangeHandler.bind(this);
@@ -29,9 +28,10 @@ export default class WatchList extends Component {
   }
 
   render () {
-    const row = this.props.watchList.map(row => 
+    const row = this.props.watchList.map((row, index) => 
     (<WatchListRow
-      key={row.symbol}
+      key={index}
+      index={index}
       symbol={row.symbol}
       price={row.price}
       change={row.change}

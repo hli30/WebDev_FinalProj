@@ -15,8 +15,6 @@ export default class AssetTypeContainer extends Component {
   }
 
   addToWatchList (symbol) {
-    let newEntry = {symbol};
-    this.setState({options: this.state.options.concat(newEntry)})
     request
       .post('http://localhost:3001/symbol/' + symbol)
       .end((err, res) => {
@@ -36,7 +34,18 @@ export default class AssetTypeContainer extends Component {
   }
 
   getOptionChain (symbol, expiry) {
-    
+    request
+      .post('http://localhost:3001/option')
+      .send({symbol: symbol, expiry: expiry})
+      .end((err, res) => {
+        if (err) {
+          console.log(err.message);
+        } else {
+          const data = JSON.parse(res.text);
+          console.log('dlen', data.length);
+          this.setState({options: data});
+        }
+      });
   }
 
   render () {
@@ -46,6 +55,7 @@ export default class AssetTypeContainer extends Component {
           addToWatchList={this.addToWatchList}
           getOptionChain={this.getOptionChain}
           watchList={this.state.watchList}
+          optionChain={this.state.options}
         />
       </div>   
     )

@@ -9,7 +9,10 @@ export default class PriceViewContainer extends Component {
   render () {
     return (
       <div>
-        {/* <OptionChain/> */}
+        <OptionChain
+          getOptionChain={this.props.getOptionChain}
+          optionChain={this.props.optionChain}
+        /> 
         <WatchList 
           addToWatchList={this.props.addToWatchList}
           watchList={this.props.watchList}

@@ -1,12 +1,13 @@
 import React, {Component} from 'react';
 import OptionChainRow from './OptionChainRow.jsx';
+import Proptypes from 'prop-types';
 
 export default class OptionChain extends Component {
   constructor (props) {
     super(props);
     this.state = {
       symbol: '',
-      expiry: 'April-20-2018'
+      expiry: '2018-04-20'
     }
     this.symbolInputHandler = this.symbolInputHandler.bind(this);
     this.expiryChangeHandler = this.expiryChangeHandler.bind(this);
@@ -24,10 +25,31 @@ export default class OptionChain extends Component {
   optionSubmitHandler (e) {
     e.preventDefault();
     this.props.getOptionChain(this.state.symbol, this.state.expiry);
-    this.setState({symbol: ''});
+    // this.setState({symbol: ''});
   }
 
   render () {
+    console.log("rowcount:", this.props.optionChain.length);
+    const optionRow = this.props.optionChain
+    .sort((a, b) => a._strike - b._strike)
+    .map((row) => 
+    (<OptionChainRow
+      key={row._strike}
+      callLast={row._call._last}
+      callChange={row._call._change}
+      callVol={row._call._vol}
+      callBid={row._call._bid}
+      callAsk={row._call._ask}
+      callOpenInt={row._call._openInt}
+      strike={row._strike}
+      putLast={row._put._last}
+      putChange={row._put._change}
+      putVol={row._put._vol}
+      putBid={row._put._bid}
+      putAsk={row._put._ask}
+      putOpenInt={row._put._openInt}
+    />))
+
     return (
       <div>
         <h3>Option Chain</h3>
@@ -40,8 +62,8 @@ export default class OptionChain extends Component {
             onChange={this.symbolInputHandler}
           />
           <select onChange={this.expiryChangeHandler}>
-            <option defaultValue="April-20-2018">April-20-2018</option>
-            <option value="April-27-2018">April-27-2018</option>
+            <option defaultValue="2018-04-20">April-20-2018</option>
+            <option value="2018-04-27">April-27-2018</option>
           </select>
           <input type="submit" value="Add"/>
         </form>
@@ -49,10 +71,21 @@ export default class OptionChain extends Component {
         <table>
           <thead>
             <tr>
-              <th>Symbol</th>
-              <th>Price</th>
+              <th></th>
+              <th>Last</th>
               <th>Change</th>
-              <th>PctChange</th>
+              <th>Vol</th>
+              <th>Bid</th>
+              <th>Ask</th>
+              <th>Open Int.</th>
+              <th>Strike</th>
+              <th>Last</th>
+              <th>Change</th>
+              <th>Vol</th>
+              <th>Bid</th>
+              <th>Ask</th>
+              <th>Open Int.</th>
+              <th></th>
             </tr>
           </thead>
 
@@ -63,4 +96,9 @@ export default class OptionChain extends Component {
       </div>   
     )
   }
+}
+
+OptionChain.propTypes = {
+  optionChain: Proptypes.array,
+  getOptionChain: Proptypes.func
 }

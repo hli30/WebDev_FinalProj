@@ -1,6 +1,5 @@
 const Option = require('./class/option.js');
 
-let optionList = [];
 
 function findStrike(strike, options) {
   return options.findIndex(element => element.strike === strike);
@@ -9,6 +8,8 @@ function findStrike(strike, options) {
 
 function buildOptionList(tradierList) {
   let list = JSON.parse(tradierList).options.option;
+  let optionList = [];
+
   //console.log(`tradierList = ${list[0].symbol}`);
   for (let i = 0; i < list.length; i++) {
     //console.log(`TradierList = ${tradierList[i].text}`);

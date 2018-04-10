@@ -1,9 +1,8 @@
-// import express from 'express';
 const express = require('express');
 const request = require('superagent');
-const optionList = require('./src/optionList')
+const optionList = require('./src/optionList');
+const bodyParser = require('body-parser');
 
-// import request from 'superagent';
 require('dotenv').config()
 const app = express();
 
@@ -23,20 +22,22 @@ const makeTradierQuery = (path, q) => {
     .set('Accept', REQ_HEADER_OPTIONS.Accept);
 }
 
+app.use(bodyParser.json());
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
   next();
 });
 
-app.get('/', (req, res) => {
-  const query = {symbol: 'goog', expiration: '2018-04-20'};
+app.post('/option', (req, res) => {
+  const query = {symbol: req.body.symbol, expiration: req.body.expiry};
+  console.log(query);
   makeTradierQuery(TRADIER_OPTIONS_PATH, query)
     .end((err, tradierResponse) => {
       if (err) {
         res.status(500).send('Error');
       } else {
-        res.type('json').send (optionList.buildOptionList(tradierResponse.text));
+        res.type('json').send(optionList.buildOptionList(tradierResponse.text));
       }
     });
 });

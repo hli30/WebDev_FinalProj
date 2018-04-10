@@ -10,6 +10,7 @@ export default class WatchListRow extends Component {
   symbolClickHandler (e) {
     e.preventDefault();
     console.log(e.target.innerText + ' clicked');
+    console.log(this.props.index + ' index');
   }
 
   render () {

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import PriceViewContainer from './option/main/PriceViewContainer.jsx';
+import StratViewContainer from './option/main/StratViewContainer.jsx';
 import request from 'superagent';
-
 
 export default class AssetTypeContainer extends Component {
   constructor (props) {
@@ -52,7 +52,8 @@ export default class AssetTypeContainer extends Component {
   }
 
   addToExamineList (option) {
-    console.log('add to examine');
+    console.log('add to examine' + JSON.stringify(option));
+    console.log(option.strike);
     // request
     //   .post('http://localhost:3001/examine')
     //   .send({option})
@@ -94,7 +95,10 @@ export default class AssetTypeContainer extends Component {
           addToExamineList={this.addToExamineList}
           examineList={this.state.examineList}
         />
-      </div>   
+        {/* <StratViewContainer
+          examineList={this.state.examineList}
+        /> */}
+      </div>
     )
   }
 }

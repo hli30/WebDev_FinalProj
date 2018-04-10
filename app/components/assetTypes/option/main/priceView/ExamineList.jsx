@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
+import ExamineListRow from './ExamineListRow.jsx';
 
 export default class ExamineList extends Component {
-  
 
   render () {
     const row = this.props.examineList.map((row, index) => (
@@ -36,4 +37,8 @@ export default class ExamineList extends Component {
       </div> 
     )
   }
+}
+
+ExamineList.propTypes = {
+ examineList: PropTypes.array 
 }

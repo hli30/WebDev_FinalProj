@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
     "dev": "node server.js",
-    "start": "node expServer.js"
+    "start": "node expServer.js",
+    "knex": "knex"
   },
   "repository": {
     "type": "git",

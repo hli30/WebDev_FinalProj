@@ -47,22 +47,31 @@ app.post('/option', (req, res) => {
     });
 });
 
-app.get('/symbol/:ticker', (req, res) => {
-
+app.get('/symbol', (req, res) => {
+  let tempString = '';
   knex.select('symbol')
     .from('watch_lists')
     .where({user_id: 1})
     .then(function(rows) {
-      for (let row in rows) {
-        makeTradierQuery(TRADIER_QUOTES_PATH, row.symbol)
-          .end((err, tradierResponse) => {
-            if (err) {
-              res.status(500).send('Error');
-            } else {
-              res.status(200).type('json').send(tradierResponse.text);
-            }
-          })        
+      for (let row of rows) {
+        if (tempString) {
+          tempString += ',';
+        }
+        tempString += row.symbol;
       }
+    })
+    .then(function() {
+      const query = {symbols: tempString};
+      makeTradierQuery(TRADIER_QUOTES_PATH, query)
+        .end((err, tradierResponse) => {
+          if (err) {
+            res.status(500).send('Error');
+          } else {
+            res.status(200).type('json').send(tradierResponse.text);
+            // console.log(tradierResponse.text);
+            // console.log(JSON.parse(tradierResponse.text));
+          }
+        });
     })
     .catch(function(error) { console.error(error); });
 

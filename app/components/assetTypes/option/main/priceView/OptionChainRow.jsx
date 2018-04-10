@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Proptypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 export default class OptionChainRow extends Component {
   constructor (props) {
@@ -8,7 +8,7 @@ export default class OptionChainRow extends Component {
   }
 
   optionClickHandler (e) {
-    addToExamineList(JSON.parse(e.target.value));
+    this.props.addToExamineList(JSON.parse(e.target.value));
   }
 
   render () {
@@ -35,17 +35,20 @@ export default class OptionChainRow extends Component {
 }
 
 OptionChainRow.propTypes = {
-  callLast: Proptypes.number,
-  callChange: Proptypes.number,
-  callVol: Proptypes.number,
-  callBid: Proptypes.number,
-  callAsk: Proptypes.number,
-  callOpenInt: Proptypes.number,
-  strike: Proptypes.number,
-  putLast: Proptypes.number,
-  putChange: Proptypes.number,
-  putVol: Proptypes.number,
-  putBid: Proptypes.number,
-  putAsk: Proptypes.number,
-  putOpenInt: Proptypes.number
+  callLast: PropTypes.number,
+  callChange: PropTypes.number,
+  callVol: PropTypes.number,
+  callBid: PropTypes.number,
+  callAsk: PropTypes.number,
+  callOpenInt: PropTypes.number,
+  strike: PropTypes.number,
+  putLast: PropTypes.number,
+  putChange: PropTypes.number,
+  putVol: PropTypes.number,
+  putBid: PropTypes.number,
+  putAsk: PropTypes.number,
+  putOpenInt: PropTypes.number,
+  addToExamineList: PropTypes.func,
+  call: PropTypes.object,
+  put: PropTypes.object
 }

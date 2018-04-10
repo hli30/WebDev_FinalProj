@@ -12,6 +12,7 @@ export default class PriceViewContainer extends Component {
       <div>
         <OptionChain
           getOptionChain={this.props.getOptionChain}
+          addToExamineList={this.props.addToExamineList}
           optionChain={this.props.optionChain}
         /> 
         <WatchList 
@@ -20,7 +21,6 @@ export default class PriceViewContainer extends Component {
         />
         <BlackScholes/>
         <ExamineList
-          addToExamineList={this.props.addToExamineList}
           examineList={this.props.examineList}
         />
       </div>
@@ -33,5 +33,6 @@ PriceViewContainer.propTypes = {
   addToWatchList: PropTypes.func,
   optionChain: PropTypes.array,
   watchList: PropTypes.array,
-  addToExamineList: PropTypes.func
+  addToExamineList: PropTypes.func,
+  examineList: PropTypes.array
 }

@@ -31,6 +31,7 @@ export default class AssetTypeContainer extends Component {
           const pctChange = data.quotes.quote.change_percentage;
           const newRow = {symbol, price, change, pctChange};
           this.setState({watchList: this.state.watchList.concat(newRow)});
+          console.log(newRow);
         }
       });
   }
@@ -51,16 +52,33 @@ export default class AssetTypeContainer extends Component {
   }
 
   addToExamineList (option) {
+    console.log('add to examine');
+    // request
+    //   .post('http://localhost:3001/examine')
+    //   .send({option})
+    //   .end((err, res) => {
+    //     if (err) {
+    //       console.log(err.message);
+    //     } else {
+    //       //gets the option moded symbol
+    //       const data = JSON.parse(res.text);
+    //       this.setState({examineList: this.state.options.concat(data)})
+    //     }
+    //   });
+  }
+
+  componentDidMount () {
     request
-      .post('http://localhost:3001/examine')
-      .send({option})
+      .get('http://localhost:3001/symbol')
       .end((err, res) => {
         if (err) {
           console.log(err.message);
         } else {
-          //gets the option moded symbol
-          const data = JSON.parse(res.text);
-          this.setState({examineList: this.state.options.concat(data)})
+          const dataArray = JSON.parse(res.text).quotes.quote;
+          const newArray = dataArray.map(({symbol, last, change, change_percentage}) => {
+            return {symbol, price: last, change, pctChange: change_percentage};       
+          });
+          this.setState({watchList: newArray});
         }
       });
   }

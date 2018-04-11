@@ -51,19 +51,18 @@ export default class AssetTypeContainer extends Component {
   }
 
   addToExamineList (option) {
-    console.log('add to examine' + JSON.stringify(option));
-    // request
-    //   .post('http://localhost:3001/examine')
-    //   .send({option})
-    //   .end((err, res) => {
-    //     if (err) {
-    //       console.log(err.message);
-    //     } else {
-    //       //gets the option moded symbol
-    //       const data = JSON.parse(res.text);
-    //       this.setState({examineList: this.state.options.concat(data)})
-    //     }
-    //   });
+    request
+      .post('http://localhost:3001/examine')
+      .send({option})
+      .end((err, res) => {
+        if (err) {
+          console.log(err.message);
+        } else {
+          //gets the option moded symbol
+          const data = JSON.parse(res.text);
+          this.setState({examineList: this.state.options.concat(data)})
+        }
+      });
   }
 
   componentDidMount () {

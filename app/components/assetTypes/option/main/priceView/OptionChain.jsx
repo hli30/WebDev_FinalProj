@@ -6,9 +6,8 @@ export default class OptionChain extends Component {
   constructor (props) {
     super(props);
     this.state = {
-      symbol: '',
+      symbol: this.props.clickedSymbol,
       expiry: '2018-04-20',
-      partialSymbol: ''
     }
     this.symbolInputHandler = this.symbolInputHandler.bind(this);
     this.expiryChangeHandler = this.expiryChangeHandler.bind(this);
@@ -32,7 +31,6 @@ export default class OptionChain extends Component {
 
   constructOptionObjAndPassUp (partialOptionObj) {
     partialOptionObj.expiry = this.state.expiry;
-    partialOptionObj.symbol = this.state.partialSymbol;
     this.props.addToExamineList(partialOptionObj);
   }
 
@@ -42,6 +40,7 @@ export default class OptionChain extends Component {
     .map((row) => 
     (<OptionChainRow
       key={row._strike}
+      symbol={row._symbol}
       call={row._call}
       callLast={row._call._last}
       callChange={row._call._change}
@@ -68,11 +67,11 @@ export default class OptionChain extends Component {
           <input
             type="text"
             placeholder="Symbol"
-            value={this.state.symbol}
+            value={this.state.symbol} 
             onChange={this.symbolInputHandler}
           />
-          <select onChange={this.expiryChangeHandler}>
-            <option defaultValue="2018-04-20">April-20-2018</option>
+          <select onChange={this.expiryChangeHandler} value={this.state.expiry}>
+            <option value="2018-04-20">April-20-2018</option>
             <option value="2018-04-27">April-27-2018</option>
           </select>
           <input type="submit" value="Add"/>
@@ -111,5 +110,6 @@ export default class OptionChain extends Component {
 OptionChain.propTypes = {
   optionChain: Proptypes.array,
   getOptionChain: Proptypes.func,
-  addToExamineList: Proptypes.func
+  addToExamineList: Proptypes.func,
+  clickedSymbol: Proptypes.string
 }

@@ -30,7 +30,7 @@ function buildOptionList(tradierList) {
         optionList[index].put.vol = list[i]['vol'];
         optionList[index].put.bid = list[i]['bid'];
         optionList[index].put.ask = list[i]['ask'];
-        optionList[index].put.openInt = list[i]['open_interest'];        
+        optionList[index].put.openInt = list[i]['open_interest'];      
       }
       // console.log(`Found an existing option: ${optionList[index]}`);
     } else {
@@ -49,7 +49,7 @@ function buildOptionList(tradierList) {
         newOption.put.vol = list[i]['vol'];
         newOption.put.bid = list[i]['bid'];
         newOption.put.ask = list[i]['ask'];
-        newOption.put.openInt = list[i]['open_interest'];        
+        newOption.put.openInt = list[i]['open_interest'];  
       }
       // console.log(`Need a new Option: ${newOption}`);
       optionList.push(newOption);

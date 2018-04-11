@@ -36,6 +36,8 @@ export default class WatchList extends Component {
       price={row.price}
       change={row.change}
       pctChange={row.pctChange}
+      setOptionDefaultFromWatchlistClick={this.props.setOptionDefaultFromWatchlistClick}
+      getOptionChain={this.props.getOptionChain}
     />))
 
     return (

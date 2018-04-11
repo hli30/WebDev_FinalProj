@@ -6,6 +6,19 @@ import BlackScholes from './priceView/BlackScholes.jsx';
 import PropTypes from 'prop-types';
 
 export default class PriceViewContainer extends Component {
+  constructor (props) {
+    super(props);
+    this.state = {
+      clickedSymbol: ''
+    }
+
+    this.setOptionDefaultFromWatchlistClick = this.setOptionDefaultFromWatchlistClick.bind(this);
+  }
+
+
+  setOptionDefaultFromWatchlistClick (symbol) {
+    this.setState({clickedSymbol: symbol});
+  }
 
   render () {
     return (
@@ -14,10 +27,13 @@ export default class PriceViewContainer extends Component {
           getOptionChain={this.props.getOptionChain}
           addToExamineList={this.props.addToExamineList}
           optionChain={this.props.optionChain}
+          clickedSymbol={this.state.clickedSymbol}
         /> 
         <WatchList 
           addToWatchList={this.props.addToWatchList}
           watchList={this.props.watchList}
+          setOptionDefaultFromWatchlistClick={this.setOptionDefaultFromWatchlistClick}
+          getOptionChain={this.props.getOptionChain}
         />
         <BlackScholes/>
         <ExamineList

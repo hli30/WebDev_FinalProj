@@ -9,8 +9,9 @@ export default class WatchListRow extends Component {
 
   symbolClickHandler (e) {
     e.preventDefault();
+    this.props.setOptionDefaultFromWatchlistClick(e.target.innerText);
+    this.props.getOptionChain(e.target.innerText, '2018-04-20');
     console.log(e.target.innerText + ' clicked');
-    console.log(this.props.index + ' index');
   }
 
   render () {

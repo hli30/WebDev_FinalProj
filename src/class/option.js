@@ -65,8 +65,8 @@ class optionType {
   
     set openInt(value) {
       this._openInt = value;
-    }   
-  
+    }
+
   }
   
   class Option {
@@ -74,7 +74,7 @@ class optionType {
       this.call = new optionType('Call');
       this.put = new optionType('Put');
       this.strike = value;
-  
+      
     }
   
     get strike() {

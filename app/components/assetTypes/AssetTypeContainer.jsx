@@ -39,13 +39,12 @@ export default class AssetTypeContainer extends Component {
   getOptionChain (symbol, expiry) {
     request
       .post('http://localhost:3001/option')
-      .send({symbol: symbol, expiry: expiry})
+      .send({symbol, expiry})
       .end((err, res) => {
         if (err) {
           console.log(err.message);
         } else {
           const data = JSON.parse(res.text);
-          console.log('dlen', data.length);
           this.setState({options: data});
         }
       });
@@ -53,7 +52,6 @@ export default class AssetTypeContainer extends Component {
 
   addToExamineList (option) {
     console.log('add to examine' + JSON.stringify(option));
-    console.log(option.strike);
     // request
     //   .post('http://localhost:3001/examine')
     //   .send({option})

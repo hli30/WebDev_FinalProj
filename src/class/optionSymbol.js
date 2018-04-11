@@ -6,6 +6,7 @@ Number.prototype.pad = function(size) {
 
 class OptionSymbol {
   constructor(rootSymbol, expiry, strikePrice, option) {
+    
     this.rootSymbol = rootSymbol;
     this.expiryDate = expiry;
     this.strikePrice = strikePrice;

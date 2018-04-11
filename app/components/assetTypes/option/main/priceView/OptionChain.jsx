@@ -40,7 +40,6 @@ export default class OptionChain extends Component {
     .map((row) => 
     (<OptionChainRow
       key={row._strike}
-      symbol={row._symbol}
       call={row._call}
       callLast={row._call._last}
       callChange={row._call._change}

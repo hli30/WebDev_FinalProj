@@ -1,10 +1,8 @@
 
-import ExamineList from './app/components/assetTypes/option/main/priceView/ExamineList';
-
+const USER_ID = 1; // this will be removed when we have a valid user logging in and out
 const express = require('express');
 const request = require('superagent');
 const optionList = require('./src/optionList');
-const OptionSymbol = require('./src/class/optionSymbol.js');
 
 require('dotenv').config();
 const ENV = process.env.ENV || 'development';
@@ -15,13 +13,13 @@ const bodyParser = require('body-parser');
 
 const app = express();
 
-const TRADIER_ENDPOINT = 'https://sandbox.tradier.com/v1/'
-const TRADIER_OPTIONS_PATH = 'markets/options/chains'
-const TRADIER_QUOTES_PATH = 'markets/quotes'
+const TRADIER_ENDPOINT = 'https://sandbox.tradier.com/v1/';
+const TRADIER_OPTIONS_PATH = 'markets/options/chains';
+const TRADIER_QUOTES_PATH = 'markets/quotes';
 const REQ_HEADER_OPTIONS = {
   Authorization: 'Bearer ' + process.env.TRADIER_TOKEN,
   Accept: 'application/json'
-}
+};
 
 const makeTradierQuery = (path, q) => {
   return request
@@ -55,7 +53,7 @@ app.get('/symbol', (req, res) => {
   let tempString = '';
   knex.select('symbol')
     .from('watch_lists')
-    .where({user_id: 1})
+    .where({user_id: USER_ID})
     .then(function(rows) {
       for (let row of rows) {
         if (tempString) {
@@ -83,13 +81,12 @@ app.get('/symbol', (req, res) => {
 
 app.get('/examine', (req, res) => {
   let examine = [];
-  knex.select('rootSymbol, expiry_date, type, strike_price')
+  knex.select('fullSymbol')
     .from('examine_lists')
-    .where({user_id: 1})
+    .where({user_id: USER_ID})
     .then(function(rows) {
       for (let row of rows) {
-        let examineList = new OptionSymbol(row.rootSymbol, row.expiry_date, row.strike_price, row.type);
-        examine.push(examineList);
+        examine.push(row.fullSymbol);
       }
     })
     .then(function() {
@@ -113,8 +110,7 @@ app.get('/examine', (req, res) => {
 
 app.post('/symbol/:ticker', (req, res) => {
   const query = {symbols: req.params.ticker};
-  // watchList.addToWatchList(1,req.params.ticker);
-  knex('watch_lists').insert({user_id: 1, symbol: req.params.ticker}).then(function (id) {
+  knex('watch_lists').insert({user_id: USER_ID, symbol: req.params.ticker}).then(function (id) {
     console.log(id);
   });
   makeTradierQuery(TRADIER_QUOTES_PATH, query)
@@ -128,10 +124,9 @@ app.post('/symbol/:ticker', (req, res) => {
 });
 
 app.post('/examine', (req, res) => {
-  const optionSymbol = new OptionSymbol(req.body.option.symbol, req.body.option.expiry, req.body.option.strike, req.body.option.type);
-  console.log (optionSymbol.rootSymbol, optionSymbol.expiryDate, optionSymbol.option, optionSymbol.strikePrice, optionSymbol.fullSymbol);
+  console.log (req.body.option.symbol);
   knex('examine_lists')
-    .insert({user_id: 1, rootSymbol: optionSymbol.rootSymbol, expiry_date: optionSymbol.expiryDate, type: optionSymbol.option, strike_price: optionSymbol.strikePrice})
+    .insert({user_id: USER_ID, fullSymbol: req.body.option.symbol})
     .then(function (id) {
       console.log(id);
     });

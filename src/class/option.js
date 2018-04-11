@@ -1,7 +1,8 @@
 
 class optionType {
     constructor(value){
-      this.symbol = value;
+      this.type = value;
+      this.symbol = '';
       this.last = 0;
       this.change = 0;
       this.vol = 0;
@@ -9,6 +10,14 @@ class optionType {
       this.ask = 0;
       this.openInt = 0;
 
+    }
+
+    get type() {
+      return this._type;
+    }
+
+    set type(value) {
+      this._type = value;
     }
 
     get symbol() {

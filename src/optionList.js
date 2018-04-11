@@ -3,7 +3,6 @@ const Option = require('./class/option.js');
 
 function findStrike(strike, options) {
   return options.findIndex(element => element.strike === strike);
-
 }
 
 function buildOptionList(tradierList) {
@@ -24,13 +23,15 @@ function buildOptionList(tradierList) {
         optionList[index].call.bid = list[i]['bid'];
         optionList[index].call.ask = list[i]['ask'];
         optionList[index].call.openInt = list[i]['open_interest'];
+        optionList[index].call.symbol = list[i]['symbol'];
       } else {
         optionList[index].put.last = list[i]['last'];
         optionList[index].put.change = list[i]['change'];
         optionList[index].put.vol = list[i]['vol'];
         optionList[index].put.bid = list[i]['bid'];
         optionList[index].put.ask = list[i]['ask'];
-        optionList[index].put.openInt = list[i]['open_interest'];      
+        optionList[index].put.openInt = list[i]['open_interest'];
+        optionList[index].put.symbol = list[i]['symbol'];
       }
       // console.log(`Found an existing option: ${optionList[index]}`);
     } else {
@@ -43,13 +44,15 @@ function buildOptionList(tradierList) {
         newOption.call.bid = list[i]['bid'];
         newOption.call.ask = list[i]['ask'];
         newOption.call.openInt = list[i]['open_interest'];
+        newOption.call.symbol = list[i]['symbol'];
       } else {
         newOption.put.last = list[i]['last'];
         newOption.put.change = list[i]['change'];
         newOption.put.vol = list[i]['vol'];
         newOption.put.bid = list[i]['bid'];
         newOption.put.ask = list[i]['ask'];
-        newOption.put.openInt = list[i]['open_interest'];  
+        newOption.put.openInt = list[i]['open_interest'];
+        newOption.put.symbol = list[i]['symbol'];
       }
       // console.log(`Need a new Option: ${newOption}`);
       optionList.push(newOption);

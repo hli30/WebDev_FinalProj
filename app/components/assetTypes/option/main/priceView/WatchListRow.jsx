@@ -17,10 +17,10 @@ export default class WatchListRow extends Component {
   render () {
     return (
       <tr>
-        <td onClick={this.symbolClickHandler}>{this.props.symbol}</td>
-        <td>{this.props.price}</td>
-        <td>{this.props.change}</td>
-        <td>{this.props.pctChange}</td>
+        <td className='watchListRow' onClick={this.symbolClickHandler}>{this.props.symbol}</td>
+        <td className='watchListRow'>{this.props.price}</td>
+        <td className='watchListRow'>{this.props.change}</td>
+        <td className='watchListRow'>{this.props.pctChange}</td>
       </tr>
     )
   }

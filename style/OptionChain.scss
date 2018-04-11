@@ -1,0 +1,56 @@
+// Colour variables
+$brand-colour : #3cb371;
+$dark: #3B2A41;
+$background: #fefefe;
+$gold: #D1BC66;
+$peachy: #C99F9A;
+$black: black;
+$uglyorange: orange;
+
+// Google Fonts
+@import url('https://fonts.googleapis.com/css?family=Merriweather:400,900|Montserrat:400,900|Rokkitt:400,900');
+
+// Font Variables
+$rokkitt: 'Rokkitt', serif;
+$merriweather: 'Merriweather', serif;
+$montserrat: 'Montserrat', sans-serif;
+
+body {
+    background: $background;
+    color: $black;
+    font-family: $montserrat;
+    font-size: 12px;
+    margin: 70px 0;
+  }
+
+.callButton {
+    color: $brand-colour;
+    border-top: 1px solid black;
+}
+
+.OptionChainHeader, .watchListHeader {
+    color: $dark;
+    border: 1px solid black;
+    font-family: $rokkitt;
+    color: black;
+    font-weight: normal;
+}
+
+.OptionChainRow, .watchListRow {
+    color: $dark;
+    border: 1px solid black;
+    font-family: $rokkitt;
+}
+
+.OptionChainRowStrike {
+    color: $dark;
+    border: 1px solid black;
+    font-family: $rokkitt;
+    font-weight: 900;
+}
+
+table {
+    border: 1px solid black;
+    text-align: center;
+    color: $gold;
+}

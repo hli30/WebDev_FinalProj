@@ -57,10 +57,10 @@ export default class WatchList extends Component {
         <table>
           <thead>
             <tr>
-              <th>Symbol</th>
-              <th>Price</th>
-              <th>Change</th>
-              <th>PctChange</th>
+              <th className='watchListHeader'>Symbol</th>
+              <th className='watchListHeader'>Price</th>
+              <th className='watchListHeader'>Change</th>
+              <th className='watchListHeader'>PctChange</th>
             </tr>
           </thead>
 

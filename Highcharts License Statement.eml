@@ -1,0 +1,382 @@
+Return-Path: bounces+3877718-cf9d-brad=zharphyn.ca@em.highsoft.com
+Received: from mi04-ssvc.dcs.int.inet (LHLO mi04.dcs.int.inet)
+ (10.0.153.221) by cds133.dcs.int.inet with LMTP; Thu, 12 Apr 2018 13:51:13
+ -0600 (MDT)
+Received: from mxr.mfg.siteprotect.com ([64.26.60.153])
+	by cmsmtp with ESMTP
+	id 6iFSfVCfkQesx6iFUffmgG; Thu, 12 Apr 2018 13:51:13 -0600
+Received: from semf06.mfg.siteprotect.com (semf06.mfg.siteprotect.com [64.26.60.169])
+	by mxr.mfg.siteprotect.com (Postfix) with ESMTPS id 40MWk65kNwz360P1D
+	for <brad@zharphyn.ca>; Thu, 12 Apr 2018 15:51:10 -0400 (EDT)
+Received: from o101.em.mx-sender-40s.com ([167.89.2.92])
+	by semf06.mfg.siteprotect.com with esmtps (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256)
+	(Exim 4.89)
+	(envelope-from <bounces+3877718-cf9d-brad=zharphyn.ca@em.highsoft.com>)
+	id 1f6iFP-0007Es-NU
+	for brad@zharphyn.ca; Thu, 12 Apr 2018 15:51:10 -0400
+DKIM-Signature: v=1; a=rsa-sha1; c=relaxed/relaxed; d=highsoft.com; 
+	h=mime-version:subject:list-unsubscribe:from:to:content-type; 
+	s=s1; bh=xgED5kRwZjx9mrR5AZxpwUQd2yA=; b=waYztQ52kiwyiDywLVHzeiY
+	5+VPwsRnBWDFU4E5RKbLMNvkWIenuiLkZa4FNS+6kQeIoWKn0nhDLznFVd0Ne7vj
+	bZHCxZ1q6DosixPA88QwdqCTeLByw7AyPNApop2ao3/vbRondKpTdMd2P66/QeRG
+	M+nePEvBRNwS33lDHxIU=
+Received: by filter0017p3las1.sendgrid.net with SMTP id filter0017p3las1-7384-5ACFB8AA-9
+        2018-04-12 19:51:06.147529028 +0000 UTC
+Received: from mailship.mx-sender-40s.com (163.23.196.104.bc.googleusercontent.com [104.196.23.163])
+	by ismtpd0008p1iad1.sendgrid.net (SG) with ESMTP id jygAvEytSG-Ck9O8JD3XRg
+	for <brad@zharphyn.ca>; Thu, 12 Apr 2018 19:51:05.928 +0000 (UTC)
+Mime-Version: 1.0
+Date: Thu, 12 Apr 2018 19:51:06 +0000 (UTC)
+Subject: Brad, here is your License Statement
+X-SP-Customer-ID: 307712003
+X-Report-Spam: Please report cases of unsolicited email to
+ abuse@mx-sender-40s.com for further investigation.
+List-Unsubscribe: <mailto:65BC6L0fvFlt~KS1HgXyIB6LjhGIi08iKbFGfuuQSjFCI32ZweF94dvqgTc-21FtFx97WbjRwa-2uR2b9TGefWZj~jeGeg09Z43NBRWPB60SPI-lruFHDsujYFdB-aX3@mx-sender-40s.com>,<http://unsub.mx-sender-40s.com/unsubscribe?sslid=M7UwNzEzMjQ1NDQ3BAA&sseid=M7Y0sjSzMLQ0BQA&jobid=57071505411&cid=307712003&noConfirm=1>
+From: "Highsoft" <sales@highsoft.com>
+To: "Brad Thiessen" <brad@zharphyn.ca>
+Content-Type: multipart/alternative;
+ boundary=6eea41a17dac1a72b142b17610c4bc06daeb5bdc9697e695cd0558a3ab6e
+Message-ID: <jygAvEytSG-Ck9O8JD3XRg@ismtpd0008p1iad1.sendgrid.net>
+X-SG-EID: UEbmLNyG5JxeIsSL3TZFSVsN4rp9yGUMDNawDLNBKufqZHIVn1HOUkKf644q5jFwULu0gVm2q52IqN
+ FfVE+n7I18cVNGtpUX/SAThthgemTmcxgZQDRJSKYGiVtgGN9rEcVx4pNzg5LHzvFcMOPTbPmDcmxl
+ YvObiVZS3XIa3tTNWq0HB1Q/8B1Vmv3CBhXGhCOnvzqvcHFi/HOUXnWKdg==
+X-SG-ID: abJri/z89ozyEJuJkS5UoIUmBINXPwlJoFk4ge1HtiiqE5AKJf3Md+bTmb52jXYZk1GTLwIIsGFGQ3
+ MxO8zbC/gkRK/RRmhoboCeEmszN+NFAgdZTxwdFnsu73qZKoX5qQH68Clt68Bjhrg6IlUdzHEERyJR
+ CYq6Eg5FqJU0VGs0rbjeeC/WRlCoki8KWO3y5T1MbcVU8EonMUFJAARSDZW/UKywAGjsthbDz9sXyk
+ M=
+Received-SPF: pass (semf06.mfg.siteprotect.com: domain of em.highsoft.com designates 167.89.2.92 as permitted sender) client-ip=167.89.2.92; envelope-from=bounces+3877718-cf9d-brad=zharphyn.ca@em.highsoft.com; helo=o101.em.mx-sender-40s.com;
+X-SPF-Result: semf06.mfg.siteprotect.com: domain of em.highsoft.com designates 167.89.2.92 as permitted sender
+Authentication-Results:  mfg.siteprotect.com; spf=pass smtp.mailfrom=bounces+3877718-cf9d-brad=zharphyn.ca@em.highsoft.com; dkim=pass header.i=highsoft.com
+X-Filter-Label: newsletter
+X-SpamExperts-Class: ham
+X-SpamExperts-Evidence: Combined (0.03)
+X-Recommended-Action: accept
+X-Filter-ID: EX5BVjFpneJeBchSMxfU5kMLFswbR6KBUxfPswH8/Bl602E9L7XzfQH6nu9C/Fh9JZ2oUlufyjIr
+ n38u2hmLrzkcCEe/ODrnurcV8w2Mz5YdCM6qm6rQRyug2I087AOUTD27dF64lPoAoft4VL97Nmoi
+ XEQh8yxCnBDx7gYwRxgu2hdDyLdPwRjOUKh9+FCNOFRzGgmbfsx9cEYmpBwLQSP1HaH27Qjry/05
+ 6DPMnxcBbahqhLzOLB55LsS747gzVqr4PVjnRnjIDC/PKVjNiTjHy2YpZqB1fkRWmyveH1egw/cj
+ YaxrZkBad0NIA4GdXQrGqkADZbWwEwNwsT3gdx65fI1udJZN8Dg5vPLCq/RXxBTa028pu9BmGwWZ
+ TbQNhOXIcMuTUsYibYLToANzdne/sE92Sr8I1SnGvUOU1ROILA8d7+C64fJBwR+bPjBzIkOcWR+n
+ nzPECvTe3hGO3bQceQr9A+QOxjYA2dEaZ0+WB41mTq6pv8sGfKX7Wgabg7Mfc4WgxT6TydOIX0aa
+ crK78A3Piw1VpdXrWV2wXMAYWIpBSjCa+XO2t039CYH/JRBQ39Bn3Uq59mNoztzK/gQwCfDG6zLC
+ kbp7qgOYQRKRY1QkBPEpktnoQekeG7/3aiJcRCHzLEKcEPHuBjBHGFiQbDj1g1cAtT41ZGnArey1
+ p3UZ+ZnsvR1Sryl0tYOdd85Us+/G4t4J0A9RLaTRxAPPjiZJc/JRW6sboJbJrAvTPpuFqUUQz+mM
+ 8JAD4ECWPIhd3QayfMEtz28+nZW6xVhiparrLP8AHQ/MV6zXsorrAtOaWi0AoX1WuICbmsF/C66t
+ Az5nSA6hIiW5ib03ZBxwEiTVJqDh0qKoKsXx5lmlhjFeg6hm85oRzEw+kgs8uPX0AiPqrARWiTf4
+ +fDM9ak1S19rHyyENhf60jVOYPuvY6BMKnfz6X/FXMoltpQE8//xgbRaFdoSNBvHAJsc4V/Ig0zX
+ FhMyHcw+LxyMGLd8K4EgtgsN2Ij6q4Ui0HC+zD0gPZ+zuGOzHEmJCGKhEA==
+X-Report-Abuse-To: spam@semfq01.mfg.siteprotect.com
+X-CMAE-Envelope: MS4wfIJDsJE5y/au2q4psIvCm+Og6PQqoVDjMxNaJHiBuBbty9UOxXhxuyqRmYdQuqQOtlb+v9pP1UyDEhQsxxiy3ViSrKwxkTH1RPUWawHVfei5SrViUVXA
+ lnEMX2CUCmyC/bgH01FQ3h29IJblbYxZP3uRYSWkrCKXmM8aPQu0v7S3qK/F6XtbZYlFt6Y1FbLz16LyI+UGuL5V8z0owfWwauWAB02J0Pcdu5PeEJy23eTq
+
+--6eea41a17dac1a72b142b17610c4bc06daeb5bdc9697e695cd0558a3ab6e
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=UTF-8
+
+Thank you for your inquiry. License statement enclosed.
+=C2=A0
+Non-Commercial License Statement
+=C2=A0
+Thank you for your interest in our software.=C2=A0This email constitutes yo=
+ur licence statement.
+License holder:Brad=C2=A0ThiessenZharphyn Development Systems
+This license is valid for personal use for the following product(s):=C2=A0H=
+ighcharts,Highstock,HighmapsThis software is released under Creative Common=
+s Attribution-NonCommercial 3.0, and is available for download at highchart=
+s.com/download. No further activation or license key is required.
+Should you require a commercial license in the future, please visit=C2=A0ou=
+r shop.
+=C2=A0
+=C2=A0
+Get the most value from our products by subscribing=C2=A0to one of our mail=
+ing lists. Click the button=C2=A0below to select.
+=C2=A0
+Get product news and updates
+Connect With Us
+www.highcharts.com
+Sentrumsgata 44 =E2=80=A2 Vik, i Sogn 6893 =E2=80=A2 Norway =E2=80=A2 Click=
+ here to unsubscribe.=
+
+--6eea41a17dac1a72b142b17610c4bc06daeb5bdc9697e695cd0558a3ab6e
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=UTF-8
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">=20
+<html xmlns=3D"http://www.w3.org/1999/xhtml"><head>
+<!-- If you delete this tag, the sky will fall on your head -->
+<meta name=3D"viewport" content=3D"width=3Ddevice-width">
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8">
+<style type=3D"text/css">
+body {
+font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue=
+", Helvetica, Arial, "Lucida Grande", sans-serif;
+font-weight: 300;
+margin: 0px;
+background-color: #ffffff;
+}
+.header {
+background-color: #ffffff;
+}
+.body {
+background-color: #ffffff;
+}
+.content {
+background-color: #ffffff;
+}
+.footer {
+background-color: #ffffff;
+}
+.sidebar {
+background-color: #ffffff;
+}
+</style>
+<style type=3D"text/css">
+@media only screen and (max-width: 480px) {
+body { font-size: 150%; }
+table, td { width: 100% !important; display: block; box-sizing: border-box;=
+ }=20
+.column, .sidebar{
+display:block !important;
+width:100% !important;
+font-size: 18px !important;
+line-height: 24px !important;
+max-width: 100%;
+}=20
+img { max-width: 100% !important; height: auto !important; }
+.respondToFit , .responsiveImage { width: 100% !important; }
+}
+</style>
+</head>
+<!-- DOC MAX WIDTH SETUP -->
+<body style=3D"font-family: "HelveticaNeue-Light", "Helvetica Neue Light", =
+"Helvetica Neue", "Helvetica", "Arial", "Lucida Grande", "sans-serif"; font=
+-weight: 300;" padding=3D"0" margin=3D"0"><div id=3D"backgroundRules" style=
+=3D"display: none;">
+</div><table width=3D"100%" class=3D"body" style=3D"background-color: rgb(2=
+55, 255, 255);" padding=3D"0" margin=3D"0" border-spacing=3D"0px"><!-- SUPE=
+R IMPORTANT -->
+<tbody><tr>
+<td>
+<!-- DEFINES IF FIXED WITH OR SCALABLE -->
+<table width=3D"640" align=3D"center" class=3D"center">
+<tbody><tr>
+<td>
+<!-- HEADER -->
+<table class=3D"header" style=3D"max-width: 640px; background-color: rgb(25=
+5, 255, 255);" border=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+<tbody><tr>
+<td width=3D"640" class=3D"header" style=3D"background-color: rgb(255, 255,=
+ 255);" border=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+<table align=3D"center" class=3D"header" style=3D"background-color: rgb(255=
+, 255, 255);" border=3D"0" cellspacing=3D"0" cellpadding=3D"20">
+<tbody><tr>
+<td>
+<div class=3D"editable" data-editable=3D"standard"><p style=3D"font-size: 9=
+px;" align=3D"center">Thank you for your inquiry. License statement enclose=
+d.</p></div>
+</td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+</tbody></table>
+<!-- /HEADER -->
+<!-- BODY -->
+<table style=3D"font-family: "HelveticaNeue-Light", "Helvetica Neue Light",=
+ "Helvetica Neue", "Helvetica", "Arial", "Lucida Grande", "sans-serif"; bac=
+kground-color: rgb(255, 255, 255);" border=3D"0" cellspacing=3D"0" cellpadd=
+ing=3D"0" valign=3D"top">
+<tbody><tr>
+<td>
+<table border=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+<tbody><tr>
+<td width=3D"640" style=3D"font-family: "HelveticaNeue-Light", "Helvetica N=
+eue Light", "Helvetica Neue", "Helvetica", "Arial", "Lucida Grande", "sans-=
+serif"; font-size: 12px;" border=3D"0" cellspacing=3D"0" cellpadding=3D"20">
+<table border=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+<tbody><tr>
+<td width=3D"100%" class=3D"content" valign=3D"top">
+<table border=3D"0" cellspacing=3D"0" cellpadding=3D"20">
+<tbody><tr>
+<td>
+<div class=3D"editable" data-editable=3D"standard"><p><img style=3D"margin:=
+ 10px auto; display: block;" src=3D"http://s3.amazonaws.com/ss-usa/companie=
+s/MzYwN7EwMDW3BAA/uploads/highcharts_logo.png" alt=3D"" width=3D"200" heigh=
+t=3D"34"></p>
+<p>&nbsp;</p>
+<center>
+<h1><strong>Non-Commercial License Statement</strong></h1>
+</center>
+<p>&nbsp;</p>
+<p><span style=3D"font-family: arial, helvetica, sans-serif; font-size: 14p=
+x;">Thank you for your interest in our software.&nbsp;This email constitute=
+s your licence statement.</span></p>
+<p><strong>License holder:<br></strong>Brad&nbsp;Thiessen<br>Zharphyn Devel=
+opment Systems</p>
+<p><br><span style=3D"font-family: arial, helvetica, sans-serif; font-size:=
+ 14px;">This license is valid for <em>personal use</em> for the following p=
+roduct(s):<em>&nbsp;Highcharts,Highstock,Highmaps</em></span><br><br><span =
+style=3D"font-family: arial, helvetica, sans-serif; font-size: 14px;">This =
+software is released under Creative Commons Attribution-NonCommercial 3.0, =
+and is available for download at <a href=3D"http://link.highsoft.com/wf/cli=
+ck?upn=3Dm1-2BK4-2BvAvG0VGUtN-2BTjBIVaMtw12Xk2NicfIgL1r-2B-2Fted2MKrg0PJF7g=
+sl1iokehKVS9uFPMs0LL78OLKd4CRCSrqLgiUvPhlsEYVmEAiFNTN1sSdpyy-2Fcdi0wWxdJLVW=
+uHjpJQHB7oPzKosm0IGyt6-2Fu-2BzrQluKxMWGpqMd-2FNGEmega1pcms-2BOF8keKQR9YkJ1r=
+Vs1yJ9UCj8em6Ee0z4y-2BUVsIgpPb4fqHqaXEFa8-3D_16wIMAj59v2jwuGb8KIdsOAZTANa60=
+NPPV3wTZH8JW9MMuaRuLDK33GBEdWnC6Z5kfHJNwiuvKK-2FcdYeOe0oLhkPFbbamw5-2FeCgNp=
+yf8AkUBR4hS9cb-2BxWfxcLpJO7ja5P3rX1ItJ73AEouZ9sCQ8-2Ffd7TdaxySksMxiaJgnymUl=
+bFqf0AR6fuv-2FHayNFMrDBF7Yv17D9Xp7mCr9Fr8WXOWeJakDVJoo-2BEsKGaB9C6iAiihUoeT=
+CiVLpcbCi83fSm7PTWMT-2BOSRqk-2Bg3-2BWxt4afv-2FpsXX5yJ-2F2EszTVZf9cWoB0-2BHr=
+VJFZ-2FuxV1UYVx9EE5uQDMJpPvPgfQdeinVmg-2BsZPjB-2BM1ikEZ-2BguUYt8j0dOLMmdJjV=
+PVduwGffUjVODO29-2F0F2bpaVQdSS0DHI7iUm6kOiczNqSAR2ck6rcY-3D">highcharts.com=
+/download</a>. No further activation or license key is required.</span></p>
+<p><span style=3D"font-family: arial, helvetica, sans-serif; font-size: 14p=
+x;">Should you require a commercial license in the future, please visit&nbs=
+p;our <a href=3D"http://link.highsoft.com/wf/click?upn=3DQugOG31u5hmeUJ-2Bh=
+GwBvbTrQursnPmXeDkvLwSpUrhgMjrmwN1dM6OJ4ljycMRo6jGJ8v-2BA7eSZHepJ1vgMtsvqf0=
+I2wTvoWMzPdT5qzPVyPeVuKBCb1kbKViyAKOO78vRLcukQjbPupzjEqC1y3kgI-2F3d5TUSeOsI=
+LutKPGx7Fvx7pKLzHeKo1Hmca1G9mHTroQjqoswAONwxAkYYpKhcuuR2j4-2FAK0Ue9VTnyddLE=
+-3D_16wIMAj59v2jwuGb8KIdsOAZTANa60NPPV3wTZH8JW9MMuaRuLDK33GBEdWnC6Z5kfHJNwi=
+uvKK-2FcdYeOe0oLhkPFbbamw5-2FeCgNpyf8AkUBR4hS9cb-2BxWfxcLpJO7ja5P3rX1ItJ73A=
+EouZ9sCQ8-2Ffd7TdaxySksMxiaJgnymUlbFqf0AR6fuv-2FHayNFMrDBF7Yv17D9Xp7mCr9Fr8=
+WXOWeJakDVJoo-2BEsKGaB9C6iAiihUoeTCiVLpcbCi83fSm7PTWMT-2BOSRqk-2Bg3-2BWxt4f=
+gCo2vDHCQsjsWLWS0gWe16-2FfI5M4sodywFWynaafCP3WOQ2oMvc3CziE0w1M56YLSj7ZVU1ix=
+fGiETNi28wxI9Yp5OilR79OXGNiE5PmDvwYW5CGOchS81IDqPr1RYQVMXCp2d9-2F2vVSPCi6g7=
+l-2Bc-3D">shop</a>.</span></p>
+<p><br><span style=3D"font-family: arial, helvetica, sans-serif; font-size:=
+ 14px;">&nbsp;</span></p>
+<hr>
+<p><span style=3D"font-family: arial, helvetica, sans-serif; font-size: 14p=
+x;">&nbsp;</span></p>
+<p><span style=3D"font-family: arial, helvetica, sans-serif; font-size: 14p=
+x;">Get the most value from our products by subscribing&nbsp;to one of our =
+mailing lists. Click the button&nbsp;below to select.</span></p>
+<p><span style=3D"font-family: arial, helvetica, sans-serif; font-size: 14p=
+x;">&nbsp;</span></p>
+<center>
+<table cellspacing=3D"0" cellpadding=3D"0">
+<tbody>
+<tr>
+<td style=3D"-webkit-border-radius: 5px; -moz-border-radius: 5px; border-ra=
+dius: 5px; color: #ffffff; display: block;" align=3D"center" bgcolor=3D"#6e=
+b33d" width=3D"310" height=3D"40">
+<p><span style=3D"font-size: 14px;"><a style=3D"font-size: 16px; font-weigh=
+t: bold; font-family: Roboto, Helvetica, Arial, sans-serif; text-decoration=
+: none; line-height: 40px; width: 100%; display: inline-block;" href=3D"htt=
+p://link.highsoft.com/wf/click?upn=3DZsZaErKp6G298aK3UIdIUGkeNng3Mn6zXXtn7-=
+2FZcgExLt2Vj9WBZWOATPS8qj4f-2FClEI-2F1mgjhfWqoxj4ctuYueDFq0cZBzp0sLDmnPEvy8=
+P9xdg9O-2BXvMa2eOuuk7bNbgLwyGJnTDWZaG0yGRRKB8yGvPqzUoSoErWda-2BnJi8jJZUpf0v=
+XhsFboWRMHj-2BM2nuC3THDqNYZpQobQ8eMGKX9VuiFhN1LlKhe-2B-2FS6s9Mw-3D_16wIMAj5=
+9v2jwuGb8KIdsOAZTANa60NPPV3wTZH8JW9MMuaRuLDK33GBEdWnC6Z5kfHJNwiuvKK-2FcdYeO=
+e0oLhkPFbbamw5-2FeCgNpyf8AkUBR4hS9cb-2BxWfxcLpJO7ja5P3rX1ItJ73AEouZ9sCQ8-2F=
+fd7TdaxySksMxiaJgnymUlbFqf0AR6fuv-2FHayNFMrDBF7Yv17D9Xp7mCr9Fr8WXOWeJakDVJo=
+o-2BEsKGaB9C6iAiihUoeTCiVLpcbCi83fSm7PTWMT-2BOSRqk-2Bg3-2BWxt4VwAW8-2BZGg9I=
+HbhPwyRm6kBZ4r-2BvTg0TKx3c9-2BxSuWO62AwryF-2BsITvnRM-2FWhEUrpgzBpPr5HDRM-2F=
+wIk6ABoCrXWlYMWptOxMCNyG5yFr-2Fyu9m-2BXDWkevZkra7JFPnjFXDEl2aONObY1OUVR5ZQA=
+eH4-3D" target=3D"_blank" rel=3D"noopener"><span style=3D"color: #ffffff;">=
+Get product news and updates</span></a></span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</center></div>
+</td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+</tbody></table>
+<!-- /BODY -->
+<!-- FOOTER -->
+<table class=3D"footer" style=3D"max-width: 640px; background-color: rgb(25=
+5, 255, 255);" border=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+<tbody><tr>
+<td width=3D"640" border=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+<table class=3D"footer" style=3D"background-color: rgb(255, 255, 255);" bor=
+der=3D"0" cellspacing=3D"0" cellpadding=3D"20">
+<tbody><tr class=3D"footerinfo">
+<td width=3D"640" valign=3D"top">
+<div class=3D"editable" data-editable=3D"standard"><center>
+<h3 style=3D"font-weight: 300;"><span style=3D"font-size: 12px;">Connect Wi=
+th Us</span></h3>
+<h3 style=3D"font-weight: 300;"><span style=3D"font-size: 12px;"><a title=
+=3D"Twitter" href=3D"http://link.highsoft.com/wf/click?upn=3DQugOG31u5hmeUJ=
+-2BhGwBvbdutiH0wJCuw3fqZO4BHZCUEBQ1Nb7yNeJvPqX5IYhCShtt6gHkxHTQX-2F8w2SpZZ-=
+2FnEnyAkOAvV-2FsW6gnAaWeN5Yw-2B-2BQgs2tX9xvKy2ubYcTY5p4pYsmbCeJI6D2Um6zZ6jr=
+-2FLoU645Yr2EhanZQkvZX-2FkSZmHvASwbhjluYyloPj1iFKJAh4ZqKHB1ur3KXwMOWSDrdVoV=
+5EPYnzhq9eyk-3D_16wIMAj59v2jwuGb8KIdsOAZTANa60NPPV3wTZH8JW9MMuaRuLDK33GBEdW=
+nC6Z5kfHJNwiuvKK-2FcdYeOe0oLhkPFbbamw5-2FeCgNpyf8AkUBR4hS9cb-2BxWfxcLpJO7ja=
+5P3rX1ItJ73AEouZ9sCQ8-2Ffd7TdaxySksMxiaJgnymUlbFqf0AR6fuv-2FHayNFMrDBF7Yv17=
+D9Xp7mCr9Fr8WXOWeJakDVJoo-2BEsKGaB9C6iAiihUoeTCiVLpcbCi83fSm7PTWMT-2BOSRqk-=
+2Bg3-2BWxt4Xs-2BAsbfhmE-2F3-2Bq978gTz8D0svZ-2BjnK4eABZT7CxYwUPWIiKB2ickGyK7=
+kzqFcbdq78fdAvBRZ3NbH4PBodbqrj2VQ-2F5wzsEizDt6oQ8Va6mUGC9FtPD9z8B-2F5sWsbsR=
+FRtJ38yR1fGepaGo5Ko-2BkY4-3D" target=3D"_blank"><img width=3D"32" height=3D=
+"32" alt=3D"Twitter" src=3D"http://s3.amazonaws.com/ss-usa/companies/MwYA/u=
+ploads/SocialMediaIcons/twitter.png"></a><a title=3D"LinkedIn" href=3D"http=
+://link.highsoft.com/wf/click?upn=3DQugOG31u5hmeUJ-2BhGwBvbTezx9LkKOBwvndbF=
+OuzK-2F-2B3s0BurS5NUwoWiz5C97Ud3WEc82C7Q9kTkmgJLKo8lR5-2F8PQZLPisrabWA70tLK=
+LrsdKoSP-2B3qO5DdtRhl3UQWjlZwxGNazIi3PI5CHD6HMtkcy0G5sV1feKueHMl-2FCJrK4tfL=
+TJKOxWou5clhOWJsRYblOvfgQrn-2FhvCuAcYabhC76-2BD2XacLjCY1l7fvmY0Hkp-2BB-2B5E=
+8swf-2B5I0PFlv_16wIMAj59v2jwuGb8KIdsOAZTANa60NPPV3wTZH8JW9MMuaRuLDK33GBEdWn=
+C6Z5kfHJNwiuvKK-2FcdYeOe0oLhkPFbbamw5-2FeCgNpyf8AkUBR4hS9cb-2BxWfxcLpJO7ja5=
+P3rX1ItJ73AEouZ9sCQ8-2Ffd7TdaxySksMxiaJgnymUlbFqf0AR6fuv-2FHayNFMrDBF7Yv17D=
+9Xp7mCr9Fr8WXOWeJakDVJoo-2BEsKGaB9C6iAiihUoeTCiVLpcbCi83fSm7PTWMT-2BOSRqk-2=
+Bg3-2BWxt4Swua0osjUKcDZ2u0VPH58pKp2w2fjp9MQn0NLKwg3V-2F-2FTK0nzswXDaENeSzGT=
+C4KfIFUpOlOnwew2gxRSDouHanGLbc2FEPPQu-2FPu7mLpyEbO0tFOR1BhwVHEcQEUQzsAdTqGl=
+J0o7mrvxi7wQEaFs-3D" target=3D"_blank"><img width=3D"32" height=3D"32" alt=
+=3D"" src=3D"http://s3.amazonaws.com/ss-usa/companies/MwYA/uploads/SocialMe=
+diaIcons/linkedin.png"></a></span></h3>
+<p style=3D"line-height: 1em; font-size: 10px;">www.highcharts.com</p>
+</center></div>
+</td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+</tbody></table>
+<!-- /FOOTER -->
+<!-- END OF CENTERING -->
+</td>
+</tr>
+</tbody></table>
+<!-- END OF CENTERING -->
+<!-- END MAX WIDTH SETUP -->
+</td>
+</tr>
+</tbody></table><div style=3D"clear:both; color: #777; text-align: center; =
+font-size: 12px; padding: 20px 0;"><p>Sentrumsgata 44 =E2=80=A2 Vik, i Sogn=
+ 6893 =E2=80=A2 Norway =E2=80=A2 <a href=3D"http://link.highsoft.com/wf/cli=
+ck?upn=3D8V9M1t8UzmC62czGBGFdk7qLXbdWQZWwaGoXJIlDcHqeRXNehh32nzX-2BRVBSd8Xb=
+OJd9K2rprRZE5nqJv-2BArrtOj8HXuJ3gbla2sGYxqBcG-2FEQAtvBjss-2B3uDznR-2FWc7j1f=
+beYNYf-2Bd-2BujsjMU7KtrF5BXBzkf06E2BTwtAhlDE-2BQThiRmPUAIez-2FDk9i86BqXxVAC=
+TvyNbGV0FWZ9xTzufDnTA4AtvBcgA4PCRzPyz-2FqMV0LTIwF3aSg3EmncFtbcDoU71hH0bOwAB=
+FLcZQAw-3D-3D_16wIMAj59v2jwuGb8KIdsOAZTANa60NPPV3wTZH8JW9MMuaRuLDK33GBEdWnC=
+6Z5kfHJNwiuvKK-2FcdYeOe0oLhkPFbbamw5-2FeCgNpyf8AkUBR4hS9cb-2BxWfxcLpJO7ja5P=
+3rX1ItJ73AEouZ9sCQ8-2Ffd7TdaxySksMxiaJgnymUlbFqf0AR6fuv-2FHayNFMrDBF7Yv17D9=
+Xp7mCr9Fr8WXOWeJakDVJoo-2BEsKGaB9C6iAiihUoeTCiVLpcbCi83fSm7PTWMT-2BOSRqk-2B=
+g3-2BWxt4ZYJwCljFdzTdm2-2BcwRH1WB6VYgYxUlJJ3mIdaRvqwIrviSpfQIcfH4YyYy-2B46N=
+v46KFFV8d4zzYhWD-2BVbqiWNAdqoogX-2FjCM-2FY-2BBpPepVZS5uqbzImk3k2cxqj5d7laWV=
+WkcHvsxBAi7ylOk-2Bkd39Y-3D" style=3D"color: #777;">Click here</a> to unsubs=
+cribe.</p></div>
+<img src=3D"http://link.highsoft.com/wf/open?upn=3D16wIMAj59v2jwuGb8KIdsOAZ=
+TANa60NPPV3wTZH8JW9MMuaRuLDK33GBEdWnC6Z5kfHJNwiuvKK-2FcdYeOe0oLhkPFbbamw5-2=
+FeCgNpyf8AkUBR4hS9cb-2BxWfxcLpJO7ja5P3rX1ItJ73AEouZ9sCQ8-2Ffd7TdaxySksMxiaJ=
+gnymUlbFqf0AR6fuv-2FHayNFMrDBF7Yv17D9Xp7mCr9Fr8WXOWeJakDVJoo-2BEsKGaB9C6iAi=
+ihUoeTCiVLpcbCi83fSm7PTWMT-2BOSRqk-2Bg3-2BWxt4WQXUY3u7bno-2BJwprXqU3YB8cO2O=
+72wW60C-2F6pJdSYXBmAhuMJO6SrW8J9JVbveLdlmVH-2F6V3ge6Ui9ugPJaqSWS2Edl6t-2Fkx=
+eezQi7ZZ8AUfvrZh98UrHwkoANHycX5yxMP8v1yvVerdI9BKi43pyyenF-2FWCDVwFA01ELzP-2=
+FBxS" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=3D"height:1px !i=
+mportant;width:1px !important;border-width:0 !important;margin-top:0 !impor=
+tant;margin-bottom:0 !important;margin-right:0 !important;margin-left:0 !im=
+portant;padding-top:0 !important;padding-bottom:0 !important;padding-right:=
+0 !important;padding-left:0 !important;"/>
+</body></html>
+
+--6eea41a17dac1a72b142b17610c4bc06daeb5bdc9697e695cd0558a3ab6e--

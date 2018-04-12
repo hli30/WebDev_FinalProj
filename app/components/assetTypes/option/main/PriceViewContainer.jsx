@@ -11,10 +11,9 @@ export default class PriceViewContainer extends Component {
     this.state = {
       clickedSymbol: ''
     }
-
+    
     this.setOptionDefaultFromWatchlistClick = this.setOptionDefaultFromWatchlistClick.bind(this);
   }
-
 
   setOptionDefaultFromWatchlistClick (symbol) {
     this.setState({clickedSymbol: symbol});

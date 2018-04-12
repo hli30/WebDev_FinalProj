@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import PriceViewContainer from './option/main/PriceViewContainer.jsx';
 import StratViewContainer from './option/main/StratViewContainer.jsx';
 import request from 'superagent';
+import OptSideNav from './option/sideNav/OptSideNav.jsx';
 
 export default class AssetTypeContainer extends Component {
   constructor (props) {
@@ -9,11 +10,13 @@ export default class AssetTypeContainer extends Component {
     this.state = {
       watchList: [],
       options:[],
-      examineList:[]
+      examineList:[],
+      currentView: 'priceView'
     }
     this.addToWatchList = this.addToWatchList.bind(this);
     this.getOptionChain = this.getOptionChain.bind(this);
     this.addToExamineList = this.addToExamineList.bind(this);
+    this.setCurrentViewOnSideNavClick = this.setCurrentViewOnSideNavClick.bind(this);
   }
 
   componentDidMount () {
@@ -83,21 +86,34 @@ export default class AssetTypeContainer extends Component {
       });
   }
 
+  setCurrentViewOnSideNavClick (viewString) {
+    this.setState({currentView: viewString});
+  }
+
   render () {
-    return (
-      <div>
-        <PriceViewContainer 
-          addToWatchList={this.addToWatchList}
-          getOptionChain={this.getOptionChain}
-          watchList={this.state.watchList}
-          optionChain={this.state.options}
-          addToExamineList={this.addToExamineList}
-          examineList={this.state.examineList}
-        />
-        {/* <StratViewContainer
-          examineList={this.state.examineList}
-        /> */}
-      </div>
-    )
+    if (this.state.currentView === 'priceView') {
+      return (
+        <div>
+          <PriceViewContainer 
+            addToWatchList={this.addToWatchList}
+            getOptionChain={this.getOptionChain}
+            watchList={this.state.watchList}
+            optionChain={this.state.options}
+            addToExamineList={this.addToExamineList}
+            examineList={this.state.examineList}
+          />
+          <OptSideNav setCurrentViewOnSideNavClick={this.setCurrentViewOnSideNavClick}/>
+        </div>
+      )
+    } else {
+      return (
+        <div>
+          <StratViewContainer
+            examineList={this.state.examineList}
+          />
+          <OptSideNav setCurrentViewOnSideNavClick={this.setCurrentViewOnSideNavClick}/>
+        </div>
+      )
+    }
   }
 }

@@ -101,6 +101,7 @@ export default class AssetTypeContainer extends Component {
             optionChain={this.state.options}
             addToExamineList={this.addToExamineList}
             examineList={this.state.examineList}
+            currentView={this.state.currentView}
           />
           <OptSideNav setCurrentViewOnSideNavClick={this.setCurrentViewOnSideNavClick}/>
         </div>
@@ -110,6 +111,7 @@ export default class AssetTypeContainer extends Component {
         <div>
           <StratViewContainer
             examineList={this.state.examineList}
+            currentView={this.state.currentView}
           />
           <OptSideNav setCurrentViewOnSideNavClick={this.setCurrentViewOnSideNavClick}/>
         </div>

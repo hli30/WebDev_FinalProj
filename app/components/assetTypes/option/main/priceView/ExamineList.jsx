@@ -6,12 +6,13 @@ export default class ExamineList extends Component {
 
   render () {
     const row = this.props.examineList.map((row, index) => (
-      //get the data from server
       <ExamineListRow
         key={index}
+        option={row}
         description={row.description}
         bid={row.bid}
         ask={row.ask}
+        addToSelectedTrades={this.props.addToSelectedTrades}
       />
     ))
 

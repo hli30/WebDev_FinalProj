@@ -37,6 +37,7 @@ export default class PriceViewContainer extends Component {
         <BlackScholes/>
         <ExamineList
           examineList={this.props.examineList}
+          currentView={this.props.currentView}
         />
       </div>
     )

@@ -77,12 +77,18 @@ const filterAndCleanData = (incData, type) => {
         ask: data.ask
       })
       cleanObj.description = data.description;
+      cleanObj.type = data.option_type;
+      cleanObj.strike = data.strike;
+      cleanObj.expiry = data.expiration_date;
       cleanArr = [cleanObj];
       break;
     case 'optionArr':
-      cleanArr = data.map(({description, bid, ask}) => {
+      cleanArr = data.map(({description, bid, ask, option_type, strike, expiration_date}) => {
         cleanObj = roundAndReturnDataObj({bid, ask});
         cleanObj.description = description;
+        cleanObj.type = option_type;
+        cleanObj.strike = strike;
+        cleanObj.expiry = expiration_date;
         return cleanObj;
       });
       break;

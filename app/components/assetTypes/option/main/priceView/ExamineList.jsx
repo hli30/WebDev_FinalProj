@@ -9,8 +9,7 @@ export default class ExamineList extends Component {
       //get the data from server
       <ExamineListRow
         key={index}
-        symbol={row.symbol}
-        expiry={row.expiry}
+        description={row.description}
         bid={row.bid}
         ask={row.ask}
       />
@@ -22,9 +21,7 @@ export default class ExamineList extends Component {
         <table>
           <thead>
             <tr>
-              <th>Symbol</th>
-              <th>Expiry</th>
-              <th>Strike</th>
+              <th>Option</th>
               <th>Bid</th>
               <th>Ask</th>
             </tr>

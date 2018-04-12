@@ -70,49 +70,46 @@ app.get('/symbol', (req, res) => {
             res.status(500).send('Error');
           } else {
             res.status(200).type('json').send(tradierResponse.text);
-            // console.log(tradierResponse.text);
-            // console.log(JSON.parse(tradierResponse.text));
           }
         });
     })
-    .catch(function(error) { console.error(error); });
+    .catch(function(error) { console.log(error); });
 
 });
 
 app.get('/examine', (req, res) => {
-  let examine = [];
+  let tempString = '';
   knex.select('fullSymbol')
     .from('examine_lists')
     .where({user_id: USER_ID})
     .then(function(rows) {
       for (let row of rows) {
-        examine.push(row.fullSymbol);
+        if (tempString) {
+          tempString += ',';
+        }
+        tempString += row.fullSymbol;
       }
     })
-    .then(function() {
-      console.log(examine[0].fullSymbol)
-      //const query = {symbols: tempString};
-      // makeTradierQuery(TRADIER_QUOTES_PATH, query)
-      //   .end((err, tradierResponse) => {
-      //     if (err) {
-      //       res.status(500).send('Error');
-      //     } else {
-      //       res.status(200).type('json').send(tradierResponse.text);
-            // console.log(tradierResponse.text);
-            // console.log(JSON.parse(tradierResponse.text));
-        //   }
-        // });
+    .then( () => {
+      const query = {symbols: tempString};
+      makeTradierQuery(TRADIER_QUOTES_PATH, query)
+        .end((err, tradierResponse) => {
+          if (err) {
+            res.status(500).send(console.log(err.message));
+          } else {
+            res.status(200).type('json').send(tradierResponse.text);
+          }
+        });
     })
-    .catch(function(error) { console.error(error); });
-
+    .catch(function(error) { console.log(error); });
 });
 
 
-app.post('/symbol/:ticker', (req, res) => {
-  const query = {symbols: req.params.ticker};
-  knex('watch_lists').insert({user_id: USER_ID, symbol: req.params.ticker}).then(function (id) {
-    console.log(id);
-  });
+app.post('/symbol', (req, res) => {
+  const query = {symbols: req.body.symbol};
+  knex('watch_lists')
+    .insert({user_id: USER_ID, symbol: req.body.symbol})
+    .catch((err) => console.log(err.message));
   makeTradierQuery(TRADIER_QUOTES_PATH, query)
     .end((err, tradierResponse) => {
       if (err) {
@@ -120,17 +117,22 @@ app.post('/symbol/:ticker', (req, res) => {
       } else {
         res.status(200).type('json').send(tradierResponse.text);
       }
-    })
+    });
 });
 
 app.post('/examine', (req, res) => {
-  console.log (req.body.option.symbol);
+  const query = {symbols: req.body.symbol};
   knex('examine_lists')
-    .insert({user_id: USER_ID, fullSymbol: req.body.option.symbol})
-    .then(function (id) {
-      console.log(id);
+    .insert({user_id: USER_ID, fullSymbol: req.body.symbol})
+    .catch((err) => console.log(err.message));
+  makeTradierQuery(TRADIER_QUOTES_PATH, query)
+    .end((err, tradierResponse) => {
+      if (err) {
+        res.status(500).send('Error');
+      } else {
+        res.status(200).type('json').send(tradierResponse.text);
+      }
     });
-  res.render('/examine');
 });
 
 app.listen(3001, () => console.log('app listening on 3001'));

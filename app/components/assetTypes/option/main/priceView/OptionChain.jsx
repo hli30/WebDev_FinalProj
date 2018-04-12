@@ -6,13 +6,12 @@ export default class OptionChain extends Component {
   constructor (props) {
     super(props);
     this.state = {
-      symbol: this.props.clickedSymbol,
+      symbol: '',
       expiry: '2018-04-20',
     }
     this.symbolInputHandler = this.symbolInputHandler.bind(this);
     this.expiryChangeHandler = this.expiryChangeHandler.bind(this);
     this.optionSubmitHandler = this.optionSubmitHandler.bind(this);
-    this.constructOptionObjAndPassUp = this.constructOptionObjAndPassUp.bind(this);
   }
 
   symbolInputHandler (e) {
@@ -27,11 +26,6 @@ export default class OptionChain extends Component {
     e.preventDefault();
     this.props.getOptionChain(this.state.symbol, this.state.expiry);
     this.setState({partialSymbol: this.state.symbol});
-  }
-
-  constructOptionObjAndPassUp (partialOptionObj) {
-    partialOptionObj.expiry = this.state.expiry;
-    this.props.addToExamineList(partialOptionObj);
   }
 
   render () {
@@ -55,7 +49,7 @@ export default class OptionChain extends Component {
       putBid={row._put._bid}
       putAsk={row._put._ask}
       putOpenInt={row._put._openInt}
-      constructOptionObjAndPassUp={this.constructOptionObjAndPassUp}  
+      addToExamineList={this.props.addToExamineList}
     />))
 
     return (
@@ -66,7 +60,7 @@ export default class OptionChain extends Component {
           <input
             type="text"
             placeholder="Symbol"
-            value={this.state.symbol} 
+            value={this.props.clickedSymbol} 
             onChange={this.symbolInputHandler}
           />
           <select onChange={this.expiryChangeHandler} value={this.state.expiry}>

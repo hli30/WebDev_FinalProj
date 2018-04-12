@@ -8,12 +8,7 @@ export default class OptionChainRow extends Component {
   }
 
   optionClickHandler (e) {
-    this.props.constructOptionObjAndPassUp({
-      strike: this.props.strike,
-      type: JSON.parse(e.target.value)._type,
-      symbol: JSON.parse(e.target.value)._symbol
-    });
-    console.log(this.props.symbol);
+    this.props.addToExamineList(JSON.parse(e.target.value)._symbol);
   }
 
   render () {

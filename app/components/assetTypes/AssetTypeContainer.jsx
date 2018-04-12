@@ -18,7 +18,8 @@ export default class AssetTypeContainer extends Component {
 
   addToWatchList (symbol) {
     request
-      .post('http://localhost:3001/symbol/' + symbol)
+      .post('http://localhost:3001/symbol')
+      .send({symbol})
       .end((err, res) => {
         if (err) {
           console.log(err.message);
@@ -31,7 +32,6 @@ export default class AssetTypeContainer extends Component {
           const pctChange = data.quotes.quote.change_percentage;
           const newRow = {symbol, price, change, pctChange};
           this.setState({watchList: this.state.watchList.concat(newRow)});
-          console.log(newRow);
         }
       });
   }
@@ -50,17 +50,23 @@ export default class AssetTypeContainer extends Component {
       });
   }
 
-  addToExamineList (option) {
+  addToExamineList (symbol) {
+    console.log(symbol);
     request
       .post('http://localhost:3001/examine')
-      .send({option})
+      .send({symbol})
       .end((err, res) => {
         if (err) {
           console.log(err.message);
         } else {
-          //gets the option moded symbol
-          const data = JSON.parse(res.text);
-          this.setState({examineList: this.state.options.concat(data)})
+          const data = JSON.parse(res.text).quotes.quote;
+          
+          const description = data.description
+          const bid = data.bid
+          const ask = data.ask
+          const newRow = {description, bid, ask};
+
+          this.setState({examineList: this.state.examineList.concat(newRow)})
         }
       });
   }
@@ -72,11 +78,33 @@ export default class AssetTypeContainer extends Component {
         if (err) {
           console.log(err.message);
         } else {
-          const dataArray = JSON.parse(res.text).quotes.quote;
-          const newArray = dataArray.map(({symbol, last, change, change_percentage}) => {
-            return {symbol, price: last, change, pctChange: change_percentage};       
-          });
-          this.setState({watchList: newArray});
+          const data = JSON.parse(res.text).quotes.quote;
+          if (!Array.isArray(data)) {
+            this.setState({watchList: [data]});
+          } else {
+            const newArray = data.map(({symbol, last, change, change_percentage}) => {
+              return {symbol, price: last, change, pctChange: change_percentage};       
+            });
+            this.setState({watchList: newArray});
+          }
+        }
+      });
+
+    request
+      .get('http://localhost:3001/examine')
+      .end((err, res) => {
+        if (err) {
+          console.log(err.message);
+        } else {
+          const data = JSON.parse(res.text).quotes.quote;
+          if (!Array.isArray(data)) {
+            this.setState({examineList: [data]});
+          } else {
+            const newArray = data.map(({description, bid, ask}) => {
+              return {description, bid, ask}
+            });
+            this.setState({examineList: newArray});
+          }
         }
       });
   }

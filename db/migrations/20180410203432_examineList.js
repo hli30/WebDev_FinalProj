@@ -5,7 +5,7 @@ exports.up = function(knex, Promise) {
         table.increments('id');
         table.integer('user_id').unsigned();
         table.foreign('user_id').references('users.id');
-        table.string('fullSymbol',25).notNullable();
+        table.string('symbol',25).notNullable();
       })
     ]);
 };

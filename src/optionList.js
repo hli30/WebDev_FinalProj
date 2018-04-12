@@ -6,7 +6,7 @@ function findStrike(strike, options) {
 }
 
 function buildOptionList(tradierList) {
-  let list = JSON.parse(tradierList).options.option;
+  let list = tradierList;
   let optionList = [];
 
   //console.log(`tradierList = ${list[0].symbol}`);

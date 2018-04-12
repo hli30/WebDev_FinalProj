@@ -16,6 +16,30 @@ export default class AssetTypeContainer extends Component {
     this.addToExamineList = this.addToExamineList.bind(this);
   }
 
+  componentDidMount () {
+    request
+      .get('http://localhost:3001/symbol')
+      .end((err, res) => {
+        if (err) {
+          console.log(err.message);
+        } else {
+          const data = JSON.parse(res.text);
+          this.setState({watchList: data});
+        }
+      });
+
+    request
+      .get('http://localhost:3001/examine')
+      .end((err, res) => {
+        if (err) {
+          console.log(err.message);
+        } else {
+          const data = JSON.parse(res.text);
+          this.setState({examineList: data});
+        }
+      });
+  }
+
   addToWatchList (symbol) {
     request
       .post('http://localhost:3001/symbol')
@@ -25,13 +49,22 @@ export default class AssetTypeContainer extends Component {
           console.log(err.message);
         } else {
           const data = JSON.parse(res.text);
+          this.setState({watchList: this.state.watchList.concat(data)});
+        }
+      });
+  }
 
-          const symbol = data.quotes.quote.symbol;
-          const price = data.quotes.quote.last;
-          const change = data.quotes.quote.change;
-          const pctChange = data.quotes.quote.change_percentage;
-          const newRow = {symbol, price, change, pctChange};
-          this.setState({watchList: this.state.watchList.concat(newRow)});
+  addToExamineList (symbol) {
+    console.log(symbol);
+    request
+      .post('http://localhost:3001/examine')
+      .send({symbol})
+      .end((err, res) => {
+        if (err) {
+          console.log(err.message);
+        } else {
+          const data = JSON.parse(res.text);
+          this.setState({examineList: this.state.examineList.concat(data)})
         }
       });
   }
@@ -46,65 +79,6 @@ export default class AssetTypeContainer extends Component {
         } else {
           const data = JSON.parse(res.text);
           this.setState({options: data});
-        }
-      });
-  }
-
-  addToExamineList (symbol) {
-    console.log(symbol);
-    request
-      .post('http://localhost:3001/examine')
-      .send({symbol})
-      .end((err, res) => {
-        if (err) {
-          console.log(err.message);
-        } else {
-          const data = JSON.parse(res.text).quotes.quote;
-          
-          const description = data.description
-          const bid = data.bid
-          const ask = data.ask
-          const newRow = {description, bid, ask};
-
-          this.setState({examineList: this.state.examineList.concat(newRow)})
-        }
-      });
-  }
-
-  componentDidMount () {
-    request
-      .get('http://localhost:3001/symbol')
-      .end((err, res) => {
-        if (err) {
-          console.log(err.message);
-        } else {
-          const data = JSON.parse(res.text).quotes.quote;
-          if (!Array.isArray(data)) {
-            this.setState({watchList: [data]});
-          } else {
-            const newArray = data.map(({symbol, last, change, change_percentage}) => {
-              return {symbol, price: last, change, pctChange: change_percentage};       
-            });
-            this.setState({watchList: newArray});
-          }
-        }
-      });
-
-    request
-      .get('http://localhost:3001/examine')
-      .end((err, res) => {
-        if (err) {
-          console.log(err.message);
-        } else {
-          const data = JSON.parse(res.text).quotes.quote;
-          if (!Array.isArray(data)) {
-            this.setState({examineList: [data]});
-          } else {
-            const newArray = data.map(({description, bid, ask}) => {
-              return {description, bid, ask}
-            });
-            this.setState({examineList: newArray});
-          }
         }
       });
   }

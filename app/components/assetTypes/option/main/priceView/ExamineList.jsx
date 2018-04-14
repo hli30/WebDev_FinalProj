@@ -26,6 +26,7 @@ export default class ExamineList extends Component {
               <th>Option</th>
               <th>Bid</th>
               <th>Ask</th>
+              <th>Quantity</th>
             </tr>
           </thead>
 

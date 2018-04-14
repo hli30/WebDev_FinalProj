@@ -18,12 +18,9 @@ export default class StratViewContainer extends Component {
   }
 
   addToSelectedTrades (optionObj) {
+    console.log(optionObj);
     this.setState({selectedTrades: this.state.selectedTrades.concat(optionObj)});
   }
-
-  // updateSelectedTrades (index, trade) {
-  // }
-  
   
   render () {
     return (

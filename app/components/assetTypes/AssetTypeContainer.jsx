@@ -11,7 +11,7 @@ export default class AssetTypeContainer extends Component {
       watchList: [],
       options:[],
       examineList:[],
-      currentView: 'priceView'
+      currentView: 'stratView'
     }
     this.addToWatchList = this.addToWatchList.bind(this);
     this.getOptionChain = this.getOptionChain.bind(this);

@@ -1,13 +1,15 @@
 import React, {Component} from 'react';
 import OptionChainRow from './OptionChainRow.jsx';
-import Proptypes from 'prop-types';
+import PropTypes from 'prop-types';
+
+// require('../../../../../../styles/OptionChain.scss');
 
 export default class OptionChain extends Component {
   constructor (props) {
     super(props);
     this.state = {
       symbol: '',
-      expiry: '2018-04-20',
+      expiry: '2018-04-20'
     }
     this.symbolInputHandler = this.symbolInputHandler.bind(this);
     this.expiryChangeHandler = this.expiryChangeHandler.bind(this);
@@ -71,27 +73,27 @@ export default class OptionChain extends Component {
         </form>
 
         <table>
-          <thead>
+          <thead className='OptionChainHeader'>
             <tr>
-              <th></th>
-              <th>Last</th>
-              <th>Change</th>
-              <th>Vol</th>
-              <th>Bid</th>
-              <th>Ask</th>
-              <th>Open Int.</th>
-              <th>Strike</th>
-              <th>Last</th>
-              <th>Change</th>
-              <th>Vol</th>
-              <th>Bid</th>
-              <th>Ask</th>
-              <th>Open Int.</th>
+              <th className='OptionChainHeader'></th>
+              <th className='OptionChainHeader'>Last</th>
+              <th className='OptionChainHeader'>Change</th>
+              <th className='OptionChainHeader'>Vol</th>
+              <th className='OptionChainHeader'>Bid</th>
+              <th className='OptionChainHeader'>Ask</th>
+              <th className='OptionChainHeader'>Open Int.</th>
+              <th className='OptionChainHeader'>Strike</th>
+              <th className='OptionChainHeader'>Last</th>
+              <th className='OptionChainHeader'>Change</th>
+              <th className='OptionChainHeader'>Vol</th>
+              <th className='OptionChainHeader'>Bid</th>
+              <th className='OptionChainHeader'>Ask</th>
+              <th className='OptionChainHeader'>Open Int.</th>
               <th></th>
             </tr>
           </thead>
 
-          <tbody>
+          <tbody className='OptionChainRow'>
             {optionRow}
           </tbody>
         </table>  
@@ -101,8 +103,8 @@ export default class OptionChain extends Component {
 }
 
 OptionChain.propTypes = {
-  optionChain: Proptypes.array,
-  getOptionChain: Proptypes.func,
-  addToExamineList: Proptypes.func,
-  clickedSymbol: Proptypes.string
+  optionChain: PropTypes.array,
+  getOptionChain: PropTypes.func,
+  addToExamineList: PropTypes.func,
+  clickedSymbol: PropTypes.string
 }

@@ -50,5 +50,6 @@ PriceViewContainer.propTypes = {
   optionChain: PropTypes.array,
   watchList: PropTypes.array,
   addToExamineList: PropTypes.func,
-  examineList: PropTypes.array
+  examineList: PropTypes.array,
+  currentView: PropTypes.string
 }

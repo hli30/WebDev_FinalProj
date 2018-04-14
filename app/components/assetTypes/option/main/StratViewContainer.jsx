@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 import ExamineList from './priceView/ExamineList.jsx';
 import RiskAnalysis from './stratView/RiskAnalysis.jsx';
 import TradeList from './stratView/TradeList.jsx';
-
+import RiskRewardChart from './stratView/RiskRewardChart.jsx';
+// import Chart from './stratView/chart.jsx';
+// require('../../../../../styles/chart.scss');
 export default class StratViewContainer extends Component {
   constructor (props) {
     super(props);
@@ -19,18 +21,24 @@ export default class StratViewContainer extends Component {
     this.setState({selectedTrades: this.state.selectedTrades.concat(optionObj)});
   }
 
+  // updateSelectedTrades (index, trade) {
+  // }
+  
+  
   render () {
     return (
       <div>
-        {/* <TradeList/>   */}
-        <RiskAnalysis 
-          selectedTrades={this.props.selectedTrades}
+        <TradeList/>
+        <RiskAnalysis
+          selectedTrades={this.state.selectedTrades}
         />
         <ExamineList 
           examineList={this.props.examineList}
           addToSelectedTrades={this.addToSelectedTrades}
           currentView={this.props.currentView}
-        />
+        /> 
+        {/* <Chart /> */}
+
       </div>
     )
   }
@@ -38,5 +46,5 @@ export default class StratViewContainer extends Component {
 
 StratViewContainer.propTypes = {
   examineList: PropTypes.array,
-  selectedTrades: PropTypes.array
+  currentView: PropTypes.string
 }

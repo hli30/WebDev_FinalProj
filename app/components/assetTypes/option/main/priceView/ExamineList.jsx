@@ -13,6 +13,7 @@ export default class ExamineList extends Component {
         bid={row.bid}
         ask={row.ask}
         addToSelectedTrades={this.props.addToSelectedTrades}
+        currentView={this.props.currentView}
       />
     ))
 

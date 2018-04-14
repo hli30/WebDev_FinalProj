@@ -14,12 +14,12 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
+        test: /\.(jsx?)$/,
         exclude: /node_modules/,
         loader: 'babel-loader'
       },
       {
-        test: /\.scss$/,
+        test: /\.s?css$/,
         loaders: ['style-loader', 'css-loader', 'sass-loader']
       }
     ]
@@ -29,5 +29,6 @@ module.exports = {
     path: __dirname + '/build'
   },
   plugins: [HTMLWebpackPluginConfig],
-  mode: 'development'
+  mode: 'development',
+  watch: true
 };

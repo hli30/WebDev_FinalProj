@@ -75,7 +75,7 @@ const filterAndCleanData = (incData, type) => {
       cleanObj = roundAndReturnDataObj({
         bid: data.bid,
         ask: data.ask
-      })
+      });
       cleanObj.description = data.description;
       cleanObj.type = data.option_type;
       cleanObj.strike = data.strike;

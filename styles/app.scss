@@ -1,0 +1,26 @@
+$red: rgba(244, 25, 9, 1);
+$green: rgba(10, 206, 27, 1);
+$blue: rgba(102, 153, 204, 1);
+$dim: rgba(79, 109, 122, 1);
+$light: rgba(192, 214, 223, 1);
+
+$sideNavColor: #f2fafe;
+$topNavColor: #A3CEF1;
+$borderColor: #A3CEF1;
+$containerColor:#f2fafe;
+
+@import 'bootstrapGrid';
+@import 'nav';
+@import 'priceView';
+
+.positive-num {
+  color: $green;
+}
+
+.negative-num {
+  color: $red;
+}
+
+body {
+  background-color: #f2f3f5;
+}

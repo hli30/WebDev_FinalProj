@@ -41,26 +41,27 @@ export default class WatchList extends Component {
     />))
 
     return (
-      <div>
-        <h3>WatchList</h3>
-
-        <form className ="watchlist" onSubmit={this.watchlistSubmitHandler}>
-          <input
-            type="text"
-            placeholder="Symbol"
-            value={this.state.symbol}
-            onChange={this.symbolInputHandler}
-          />
-          <input type="submit" value="Add"/>
-        </form>
-
-        <table>
-          <thead>
+      <div className="col-xs-6" id="watchlist">
+        <div className="watchlist-header">
+          <form className="form-inline" onSubmit={this.watchlistSubmitHandler}>
+            <label>Watchlist</label>
+            <input
+              className="input-field form-control"
+              type="text"
+              placeholder="Symbol"
+              value={this.state.symbol}
+              onChange={this.symbolInputHandler}
+            />
+            <input className="btn btn-primary" type="submit" value="Add"/>
+          </form>
+        </div>
+        <table className="table table-hover table-bordered table-striped">
+          <thead className="thead-dark">
             <tr>
-              <th className='watchListHeader'>Symbol</th>
-              <th className='watchListHeader'>Price</th>
-              <th className='watchListHeader'>Change</th>
-              <th className='watchListHeader'>PctChange</th>
+              <th>Symbol</th>
+              <th>Price</th>
+              <th>Change</th>
+              <th>PctChange</th>
             </tr>
           </thead>
 
@@ -75,5 +76,7 @@ export default class WatchList extends Component {
 
 WatchList.propTypes = {
   watchList: PropTypes.array,
-  addToWatchList: PropTypes.func
+  addToWatchList: PropTypes.func,
+  setOptionDefaultFromWatchlistClick: PropTypes.func,
+  getOptionChain: PropTypes.func
 }

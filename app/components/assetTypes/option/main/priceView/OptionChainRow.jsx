@@ -14,21 +14,25 @@ export default class OptionChainRow extends Component {
   render () {
     return (
       <tr>
-        <td><button type='button' className='callButton' value={JSON.stringify(this.props.call)} onClick={this.optionClickHandler}>+</button></td>
-        <td className='OptionChainRow'>{this.props.callLast}</td>
-        <td className='OptionChainRow'>{this.props.callChange}</td>
-        <td className='OptionChainRow'>{this.props.callVol}</td>
-        <td className='OptionChainRow'>{this.props.callBid}</td>
-        <td className='OptionChainRow'>{this.props.callAsk}</td>
-        <td className='OptionChainRow'>{this.props.callOpenInt}</td>
-        <td className='OptionChainRow Strike'>{this.props.strike}</td>
-        <td className='OptionChainRow'>{this.props.putLast}</td>
-        <td className='OptionChainRow'>{this.props.putChange}</td>
-        <td className='OptionChainRow'>{this.props.putVol}</td>
-        <td className='OptionChainRow'>{this.props.putBid}</td>
-        <td className='OptionChainRow'>{this.props.putAsk}</td>
-        <td className='OptionChainRow'>{this.props.putOpenInt}</td>
-        <td><button type='button' className='callButton' value={JSON.stringify(this.props.put)} onClick={this.optionClickHandler}>+</button></td>
+        <td><button type="button" value={JSON.stringify(this.props.call)} onClick={this.optionClickHandler}>+</button></td>
+        <td>{this.props.callLast}</td>
+        <td className={this.props.callChange >= 0 ? 'positive-num' : 'negative-num'}>
+          {this.props.callChange}
+        </td>
+        <td>{this.props.callVol}</td>
+        <td>{this.props.callBid}</td>
+        <td>{this.props.callAsk}</td>
+        <td>{this.props.callOpenInt}</td>
+        <td id="strike">{this.props.strike}</td>
+        <td>{this.props.putLast}</td>
+        <td className={this.props.putChange >= 0 ? 'positive-num' : 'negative-num'}>
+          {this.props.putChange}
+        </td>
+        <td>{this.props.putVol}</td>
+        <td>{this.props.putBid}</td>
+        <td>{this.props.putAsk}</td>
+        <td>{this.props.putOpenInt}</td>
+        <td><button type="button" value={JSON.stringify(this.props.put)} onClick={this.optionClickHandler}>+</button></td>
       </tr>  
     )
   }

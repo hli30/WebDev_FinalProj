@@ -21,24 +21,27 @@ export default class PriceViewContainer extends Component {
 
   render () {
     return (
-      <div>
-        <OptionChain
-          getOptionChain={this.props.getOptionChain}
-          addToExamineList={this.props.addToExamineList}
-          optionChain={this.props.optionChain}
-          clickedSymbol={this.state.clickedSymbol}
-        /> 
-        <WatchList 
-          addToWatchList={this.props.addToWatchList}
-          watchList={this.props.watchList}
-          setOptionDefaultFromWatchlistClick={this.setOptionDefaultFromWatchlistClick}
-          getOptionChain={this.props.getOptionChain}
-        />
-        <BlackScholes/>
-        <ExamineList
-          examineList={this.props.examineList}
-          currentView={this.props.currentView}
-        />
+      <div className="col-xs-9 main-shift-right">
+        <div id="option-chain" className="row">
+          <OptionChain
+            getOptionChain={this.props.getOptionChain}
+            addToExamineList={this.props.addToExamineList}
+            optionChain={this.props.optionChain}
+            clickedSymbol={this.state.clickedSymbol}
+          />
+        </div>
+        <div id="lists" className="row"> 
+          <WatchList 
+            addToWatchList={this.props.addToWatchList}
+            watchList={this.props.watchList}
+            setOptionDefaultFromWatchlistClick={this.setOptionDefaultFromWatchlistClick}
+            getOptionChain={this.props.getOptionChain}
+          />
+          <ExamineList
+            examineList={this.props.examineList}
+            currentView={this.props.currentView}
+          />
+        </div>
       </div>
     )
   }

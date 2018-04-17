@@ -17,10 +17,16 @@ export default class WatchListRow extends Component {
   render () {
     return (
       <tr>
-        <td className='watchListRow' onClick={this.symbolClickHandler}>{this.props.symbol}</td>
-        <td className='watchListRow'>{this.props.price}</td>
-        <td className='watchListRow'>{this.props.change}</td>
-        <td className='watchListRow'>{this.props.pctChange}</td>
+        <td onClick={this.symbolClickHandler}>{this.props.symbol}</td>
+        <td className={this.props.change >= 0 ? 'positive-num' : 'negative-num'}>
+          {this.props.price}
+        </td>
+        <td className={this.props.change >= 0 ? 'positive-num' : 'negative-num'}>
+          {this.props.change}
+        </td>
+        <td className={this.props.pctChange >= 0 ? 'positive-num' : 'negative-num'}>
+          {this.props.pctChange}
+        </td>
       </tr>
     )
   }
@@ -30,5 +36,7 @@ WatchListRow.propTypes = {
   symbol: PropTypes.string,
   price: PropTypes.number,
   change: PropTypes.number,
-  pctChange: PropTypes.number
+  pctChange: PropTypes.number,
+  setOptionDefaultFromWatchlistClick: PropTypes.func,
+  getOptionChain: PropTypes.func
 }

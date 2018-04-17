@@ -56,39 +56,42 @@ export default class OptionChain extends Component {
 
     return (
       <div>
-        <h3>Option Chain</h3>
+        <div>
+          <label>Option Chain</label>
 
-        <form className ="optionChain-form" onSubmit={this.optionSubmitHandler}>
-          <input
-            type="text"
-            placeholder="Symbol"
-            value={this.props.clickedSymbol} 
-            onChange={this.symbolInputHandler}
-          />
-          <select onChange={this.expiryChangeHandler} value={this.state.expiry}>
-            <option value="2018-04-20">April-20-2018</option>
-            <option value="2018-04-27">April-27-2018</option>
-          </select>
-          <input type="submit" value="Add"/>
-        </form>
+          <form className ="option-chain-form" onSubmit={this.optionSubmitHandler}>
+            <input
+              className="input-field form-control"
+              type="text"
+              placeholder="Symbol"
+              value={this.props.clickedSymbol} 
+              onChange={this.symbolInputHandler}
+            />
+            <select onChange={this.expiryChangeHandler} value={this.state.expiry}>
+              <option value="2018-04-20">April-20-2018</option>
+              <option value="2018-04-27">April-27-2018</option>
+            </select>
+            <input className="btn btn-primary" type="submit" value="Search"/>
+          </form>
+        </div>
 
-        <table>
-          <thead className='OptionChainHeader'>
+        <table className="table table-hover table-striped table-bordered table-condensed">
+          <thead className="thead-dark">
             <tr>
-              <th className='OptionChainHeader'></th>
-              <th className='OptionChainHeader'>Last</th>
-              <th className='OptionChainHeader'>Change</th>
-              <th className='OptionChainHeader'>Vol</th>
-              <th className='OptionChainHeader'>Bid</th>
-              <th className='OptionChainHeader'>Ask</th>
-              <th className='OptionChainHeader'>Open Int.</th>
-              <th className='OptionChainHeader'>Strike</th>
-              <th className='OptionChainHeader'>Last</th>
-              <th className='OptionChainHeader'>Change</th>
-              <th className='OptionChainHeader'>Vol</th>
-              <th className='OptionChainHeader'>Bid</th>
-              <th className='OptionChainHeader'>Ask</th>
-              <th className='OptionChainHeader'>Open Int.</th>
+              <th></th>
+              <th>Last</th>
+              <th>Change</th>
+              <th>Vol</th>
+              <th>Bid</th>
+              <th>Ask</th>
+              <th>Open Int.</th>
+              <th>Strike</th>
+              <th>Last</th>
+              <th>Change</th>
+              <th>Vol</th>
+              <th>Bid</th>
+              <th>Ask</th>
+              <th>Open Int.</th>
               <th></th>
             </tr>
           </thead>

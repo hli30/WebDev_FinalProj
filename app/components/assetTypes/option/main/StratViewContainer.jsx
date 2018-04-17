@@ -11,20 +11,35 @@ export default class StratViewContainer extends Component {
     super(props);
     this.state = {
       selectedTrades : [],
-      confirmedTrades: []
+      confirmedTrades: [],
+      chartDataPoints: []
     }
 
     this.addToSelectedTrades = this.addToSelectedTrades.bind(this);
   }
 
   addToSelectedTrades (optionObj) {
-    console.log(optionObj);
+    // console.log(optionObj);
     this.setState({selectedTrades: this.state.selectedTrades.concat(optionObj)});
   }
+
+  // calculateDataPoints () {
+  //   let totalPremium;
+  //   let maxLoss;
+  //   let maxGain;
+  //   let breakeven;
+
+  //   let dataArr = this.state.selectedTrades.map(({action, premium, quantity}) => {
+  //     if (action === 'sell') {
+  //       premium = -1 * premium;
+  //       totalPremium = premium * quantity;
+  //     }
+  //   });
+  // }
   
   render () {
     return (
-      <div>
+      <div className="col-xs-9 main-shift-right">
         <TradeList/>
         <RiskAnalysis
           selectedTrades={this.state.selectedTrades}
@@ -34,7 +49,9 @@ export default class StratViewContainer extends Component {
           addToSelectedTrades={this.addToSelectedTrades}
           currentView={this.props.currentView}
         /> 
-        {/* <Chart /> */}
+        <RiskRewardChart
+          selectedTrades={this.state.selectedTrades}
+        />
 
       </div>
     )

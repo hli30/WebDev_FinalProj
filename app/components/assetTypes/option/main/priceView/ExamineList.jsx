@@ -18,15 +18,17 @@ export default class ExamineList extends Component {
     ))
 
     return (
-      <div>
-        <h3>Examine List</h3>
-        <table>
-          <thead>
+      <div id="examinelist" className="col-xs-6">
+        <div className="examinelist-header">
+          <label>Examine List</label>
+        </div>
+        <table className="table table-hover table-bordered table-striped">
+          <thead className="thead-dark">
             <tr>
               <th>Option</th>
               <th>Bid</th>
               <th>Ask</th>
-              <th>Quantity</th>
+              {this.props.currentView === 'stratView' ? <th>Quantity</th> : null}
             </tr>
           </thead>
 
@@ -40,5 +42,7 @@ export default class ExamineList extends Component {
 }
 
 ExamineList.propTypes = {
- examineList: PropTypes.array 
+ examineList: PropTypes.array,
+ addToSelectedTrades: PropTypes.func,
+ currentView: PropTypes.string
 }

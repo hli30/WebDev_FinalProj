@@ -1,0 +1,27 @@
+.side-nav-fixed-left {
+  position:fixed;
+  left: 0px;
+  top: 56px;
+  bottom: 0px;
+}
+
+#side-nav {
+  background-color: $sideNavColor;
+  border-right: 1px solid $borderColor;
+
+  button {
+    margin: 0.5em;
+    
+  }
+  .nav-icon {
+    font-size: 3em;
+  }
+}
+
+#top-nav {
+  background-color: $topNavColor;
+}
+
+.dropdown-divider.custom-divider {
+  border-color: $borderColor;
+}

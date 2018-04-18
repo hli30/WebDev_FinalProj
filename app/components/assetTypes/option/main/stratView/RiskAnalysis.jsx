@@ -10,14 +10,12 @@ export default class RiskAnalysis extends Component {
       btnClicked: false
     }
 
-    this.tradeSubmitBtnHandler = this.tradeSubmitBtnHandler.bind(this);
+    // this.tradeSubmitBtnHandler = this.tradeSubmitBtnHandler.bind(this);
   }
 
-  tradeSubmitBtnHandler () {
-    this.setState({btnClicked: true});
-    console.log(this.props.selectedTrades)
-    console.log(this.state.btnClicked)
-  }
+  // tradeSubmitBtnHandler () {
+  //   this.setState({btnClicked: true});
+  // }
 
   render() {
     const rowOfSelectedOption = this.props.selectedTrades.map((option, index) =>
@@ -44,12 +42,15 @@ export default class RiskAnalysis extends Component {
             <tbody>
               {rowOfSelectedOption}
               <tr>
-                <td>Net Premium</td>
                 <td></td>
                 <td></td>
                 <td></td>
                 <td></td>
-                <td>sum here</td>
+                <td className="text-bold">Net Debit/Credit</td>
+                <td>$
+                  {Math.abs(this.props.tradesTotal)}
+                  {this.props.tradesTotal >= 0 ? ' CR' : ' DR'}
+                </td>
               </tr>
               {/* <tr>
                 <td>

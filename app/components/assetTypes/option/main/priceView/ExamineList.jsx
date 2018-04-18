@@ -14,6 +14,7 @@ export default class ExamineList extends Component {
         ask={row.ask}
         addToSelectedTrades={this.props.addToSelectedTrades}
         currentView={this.props.currentView}
+        updatePremiumSum={this.props.updatePremiumSum}
       />
     ))
 

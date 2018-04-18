@@ -9,6 +9,7 @@ export default class StratViewContainer extends Component {
     super(props);
     this.state = {
       selectedTrades : [],
+      tradesTotal: 0
     }
 
     this.addToSelectedTrades = this.addToSelectedTrades.bind(this);
@@ -16,7 +17,24 @@ export default class StratViewContainer extends Component {
 
   addToSelectedTrades (optionObj) {
     // console.log(optionObj);
-    this.setState({selectedTrades: this.state.selectedTrades.concat(optionObj)});
+    this.setState({selectedTrades: this.state.selectedTrades.concat(optionObj)}, () => {
+      this.setState({tradesTotal: this.calculatePremiumSum()});
+    });
+  }
+
+  calculatePremiumSum () {
+    let total = 0;
+    this.state.selectedTrades.forEach(trade => {
+      let tempPremium;
+      if (trade.action === 'Buy') {
+        tempPremium = trade.premium * -1;
+      } else {
+        tempPremium = trade.premium;
+      }
+      let subTotal = tempPremium * trade.quantity;
+      total += subTotal; 
+    });
+    return Math.round(total*100)/100;
   }
   
   render () {
@@ -25,6 +43,7 @@ export default class StratViewContainer extends Component {
         <div className="row">
           <RiskAnalysis
             selectedTrades={this.state.selectedTrades}
+            tradesTotal={this.state.tradesTotal}
           />
         </div>
         <div className="row">
@@ -32,6 +51,7 @@ export default class StratViewContainer extends Component {
             examineList={this.props.examineList}
             addToSelectedTrades={this.addToSelectedTrades}
             currentView={this.props.currentView}
+            updatePremiumSum={this.updatePremiumSum}
           /> 
         </div>
       </div>

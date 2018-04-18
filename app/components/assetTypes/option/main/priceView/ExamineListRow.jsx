@@ -13,12 +13,12 @@ export default class ExamineListRow extends Component {
   }
 
   buyOptionClickHandler (e) {
-    let optionObj = this.reassembleOptionObj(JSON.parse(e.target.value), 'buy');
+    let optionObj = this.reassembleOptionObj(JSON.parse(e.target.value), 'Buy');
     this.props.addToSelectedTrades(optionObj);
   }
 
   sellOptionClickHandler (e) {
-    let optionObj = this.reassembleOptionObj(JSON.parse(e.target.value), 'sell');
+    let optionObj = this.reassembleOptionObj(JSON.parse(e.target.value), 'Sell');
     this.props.addToSelectedTrades(optionObj);
   }
 
@@ -33,7 +33,7 @@ export default class ExamineListRow extends Component {
       type,
       strike,
       expiry: this.calculateDaysToExpiry(expiry),
-      premium: action === 'buy' ? ask : bid,
+      premium: action === 'Buy' ? ask : bid,
       quantity: Number(this.state.quantity)
     };
     return optionObj;

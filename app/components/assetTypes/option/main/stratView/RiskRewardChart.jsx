@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Line} from 'react-chartjs-2';
+import PropTypes from 'prop-types';
 
 export default class RiskRewardChart extends Component {
   
@@ -46,4 +47,8 @@ export default class RiskRewardChart extends Component {
       )
     }
   }
+}
+
+RiskRewardChart.propTypes = {
+  selectedTrades: PropTypes.array
 }

@@ -69,8 +69,16 @@ export default class ExamineListRow extends Component {
             />
           </td>
           <td>
-            <button value={JSON.stringify(this.props.option)} onClick={this.buyOptionClickHandler}>Buy</button>
-            <button value={JSON.stringify(this.props.option)} onClick={this.sellOptionClickHandler}>Sell</button>
+            <button 
+              value={JSON.stringify(this.props.option)} 
+              onClick={this.buyOptionClickHandler}
+              className="btn btn-success">Buy</button>
+          </td>
+          <td>
+            <button 
+              value={JSON.stringify(this.props.option)} 
+              onClick={this.sellOptionClickHandler}
+              className="btn btn-danger">Sell</button>
           </td>
         </tr>
       )

@@ -41,7 +41,7 @@ export default class WatchList extends Component {
     />))
 
     return (
-      <div className="col-xs-6" id="watchlist">
+      <div className="col-6" id="watchlist">
         <div className="watchlist-header">
           <form className="form-inline" onSubmit={this.watchlistSubmitHandler}>
             <label>Watchlist</label>

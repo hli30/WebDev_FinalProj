@@ -2,17 +2,13 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import ExamineList from './priceView/ExamineList.jsx';
 import RiskAnalysis from './stratView/RiskAnalysis.jsx';
-import TradeList from './stratView/TradeList.jsx';
-import RiskRewardChart from './stratView/RiskRewardChart.jsx';
-// import Chart from './stratView/chart.jsx';
-// require('../../../../../styles/chart.scss');
+// import RiskRewardChart from './stratView/RiskRewardChart.jsx';
+
 export default class StratViewContainer extends Component {
   constructor (props) {
     super(props);
     this.state = {
       selectedTrades : [],
-      confirmedTrades: [],
-      chartDataPoints: []
     }
 
     this.addToSelectedTrades = this.addToSelectedTrades.bind(this);
@@ -22,37 +18,22 @@ export default class StratViewContainer extends Component {
     // console.log(optionObj);
     this.setState({selectedTrades: this.state.selectedTrades.concat(optionObj)});
   }
-
-  // calculateDataPoints () {
-  //   let totalPremium;
-  //   let maxLoss;
-  //   let maxGain;
-  //   let breakeven;
-
-  //   let dataArr = this.state.selectedTrades.map(({action, premium, quantity}) => {
-  //     if (action === 'sell') {
-  //       premium = -1 * premium;
-  //       totalPremium = premium * quantity;
-  //     }
-  //   });
-  // }
   
   render () {
     return (
-      <div className="col-xs-9 main-shift-right">
-        <TradeList/>
-        <RiskAnalysis
-          selectedTrades={this.state.selectedTrades}
-        />
-        <ExamineList 
-          examineList={this.props.examineList}
-          addToSelectedTrades={this.addToSelectedTrades}
-          currentView={this.props.currentView}
-        /> 
-        <RiskRewardChart
-          selectedTrades={this.state.selectedTrades}
-        />
-
+      <div className="col-11 reset-padding">
+        <div className="row">
+          <RiskAnalysis
+            selectedTrades={this.state.selectedTrades}
+          />
+        </div>
+        <div className="row">
+          <ExamineList 
+            examineList={this.props.examineList}
+            addToSelectedTrades={this.addToSelectedTrades}
+            currentView={this.props.currentView}
+          /> 
+        </div>
       </div>
     )
   }

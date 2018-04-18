@@ -28,35 +28,37 @@ export default class RiskAnalysis extends Component {
         btnClicked={this.state.btnClicked}
       />));
     return (
-      <div>
-        <table>
-          <thead>
-            <tr>
-              <th>Buy / Sell</th>
-              <th>Quantity</th>
-              <th>Call / Put</th>
-              <th>Strike</th>
-              <th>Days to Expiry</th>
-              <th>Premium</th>
-            </tr>
-          </thead>
-          <tbody>
-            {rowOfSelectedOption}
-            <tr>
-              <td>Net Premium</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td>sum here</td>
-            </tr>
-            <tr>
-              <td>
-                <button onClick={this.tradeSubmitBtnHandler}>Submit</button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+      <div className="col" >
+        <div id="selected-trades-container">
+          <table className="table table-hover table-bordered table-striped">
+            <thead className="thead-dark">
+              <tr>
+                <th>Buy / Sell</th>
+                <th>Quantity</th>
+                <th>Call / Put</th>
+                <th>Strike</th>
+                <th>Days to Expiry</th>
+                <th>Premium</th>
+              </tr>
+            </thead>
+            <tbody>
+              {rowOfSelectedOption}
+              <tr>
+                <td>Net Premium</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>sum here</td>
+              </tr>
+              {/* <tr>
+                <td>
+                  <button className="btn btn-primary" onClick={this.tradeSubmitBtnHandler}>Submit</button>
+                </td>
+              </tr> */}
+            </tbody>
+          </table>
+        </div>
       </div>
     )
   }

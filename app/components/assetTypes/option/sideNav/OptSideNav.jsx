@@ -13,7 +13,7 @@ export default class OptSideNav extends Component {
 
   render () {
     return (
-      <div className="col-xs-3 side-nav-fixed-left" id="side-nav">
+      <div className="col-1 reset-padding" id="side-nav">
         <ul className="list-unstyled">
           <li>
             <button 
@@ -26,7 +26,6 @@ export default class OptSideNav extends Component {
             <br/>
             Option Chain
           </li>
-          <div className="custom-divider dropdown-divider"></div>
           <li>
             <button 
               className="btn btn-outline-info"

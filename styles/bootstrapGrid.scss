@@ -1,3 +1,7 @@
 .container-fluid.custom-container {
   padding-top: 56px;
 }
+
+.row.outer-container {
+  height: calc(100vh - 71px);
+}

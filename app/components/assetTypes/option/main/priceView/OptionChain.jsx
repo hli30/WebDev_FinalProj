@@ -55,16 +55,16 @@ export default class OptionChain extends Component {
     />))
 
     return (
-      <div>
-        <div>
+      <div className="col">
+        <div className="option-chain-header">
           <label>Option Chain</label>
 
-          <form className ="option-chain-form" onSubmit={this.optionSubmitHandler}>
+          <form className="form-inline" onSubmit={this.optionSubmitHandler}>
             <input
               className="input-field form-control"
               type="text"
               placeholder="Symbol"
-              value={this.props.clickedSymbol} 
+              value={this.state.symbol || this.props.clickedSymbol} 
               onChange={this.symbolInputHandler}
             />
             <select onChange={this.expiryChangeHandler} value={this.state.expiry}>

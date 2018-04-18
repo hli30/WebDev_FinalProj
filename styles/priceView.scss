@@ -1,29 +1,26 @@
-.main-shift-right {
-  margin-left: 100px;
+.reset-padding {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.main {
+  position: fixed;
+  top: 14px;
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
 }
 
 #lists {
-  position: fixed;
-  bottom: 0px;
-  left: 100px;
-  right: 0px;
-  top: 461px;
+  height: calc(45vh - 85px);
   background-color: $containerColor;
-  border: 1px solid $borderColor;
+  border: 2px solid $borderColor;
   margin: 5px;
   padding: 5px;
 
   #watchlist {
     overflow: scroll;
-    // .list-header-fixed {
-    //   position: absolute;
-    //   top: 5px;
-    //   left: 5px;
-    // }
-    // .table-header-fixed {
-    //   position: absolute;
-    //   top: 10px;
-    // }
+
     .watchlist-header {
       padding: 5px;
 
@@ -41,7 +38,6 @@
 
   #examinelist {
     overflow: scroll;
-    margin-left: 3em;
 
     .examinelist-header {
       padding: 5px;
@@ -55,16 +51,35 @@
 
 #option-chain {
   background-color: $containerColor;
-  border: 1px solid $borderColor;
+  border: 2px solid $borderColor;
   margin: 5px;
   padding: 5px;
-  height: 400px;
+  height: calc(55vh);
   overflow: scroll;
+
+  .option-chain-header {
+    padding: 5px;
+    padding-bottom: 0px;
+    display: flex;
+
+    label {
+      font-size: 150%;
+      margin-right: 2em;
+    }
+    .input-field {
+      width: 10em;
+      margin-right: 0.5em;
+    }
+    select {
+      margin-right: 0.5em;
+      height: 1.5em;
+    }
+  }
 
   table {
     th {
       padding: 1px;
-      width: 72px
+      width: 72px;
     }
 
     #strike {

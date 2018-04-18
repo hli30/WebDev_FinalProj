@@ -17,25 +17,32 @@ export default class ExamineList extends Component {
       />
     ))
 
-    return (
-      <div id="examinelist" className="col-xs-6">
-        <div className="examinelist-header">
-          <label>Examine List</label>
-        </div>
-        <table className="table table-hover table-bordered table-striped">
-          <thead className="thead-dark">
-            <tr>
-              <th>Option</th>
-              <th>Bid</th>
-              <th>Ask</th>
-              {this.props.currentView === 'stratView' ? <th>Quantity</th> : null}
-            </tr>
-          </thead>
+    const overflow = {
+      overflow: 'scroll'
+    }
 
-          <tbody>
-            {row}
-          </tbody>
-        </table>  
+    return (
+      <div className="col" style={overflow}>
+        <div id={this.props.currentView === 'stratView' ? 'stratView-examine' : 'examinelist'}>
+          <div className="examinelist-header">
+            <label>Examine List</label>
+          </div>
+          <table className="table table-hover table-bordered table-striped">
+            <thead className="thead-dark">
+              <tr>
+                <th>Option</th>
+                <th>Bid</th>
+                <th>Ask</th>
+                {this.props.currentView === 'stratView' ? <th>Quantity</th> : null}
+                {this.props.currentView === 'stratView' ? <th colSpan='2'>Action</th> : null}
+              </tr>
+            </thead>
+
+            <tbody>
+              {row}
+            </tbody>
+          </table> 
+        </div> 
       </div> 
     )
   }

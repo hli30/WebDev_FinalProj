@@ -93,8 +93,8 @@ export default class AssetTypeContainer extends Component {
   render () {
     if (this.state.currentView === 'priceView') {
       return (
-        <div className="custom-container container-fluid">
-          <div className="row">
+        <div className="custom-container container-fluid main">
+          <div className="row outer-container">
             <OptSideNav 
               setCurrentViewOnSideNavClick={this.setCurrentViewOnSideNavClick}
             />
@@ -112,8 +112,8 @@ export default class AssetTypeContainer extends Component {
       )
     } else {
       return (
-        <div className="custom-container container-fluid">
-          <div className="row">
+        <div className="custom-container container-fluid main">
+          <div className="row outer-container">
             <OptSideNav 
               setCurrentViewOnSideNavClick={this.setCurrentViewOnSideNavClick}
             />

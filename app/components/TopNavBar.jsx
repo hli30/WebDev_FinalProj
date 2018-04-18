@@ -6,10 +6,9 @@ export default class TopNavBar extends Component {
       <nav className="navbar navbar-light fixed-top" id="top-nav">
         <span className="navbar-brand">
           <i className="fas fa-signal"></i>
-          ExpressOption
+          <span>ExpressOption</span>
         </span>
       </nav>
-      // <div className="jumbotron text-center"><h1> BLACK SWAN </h1></div>
     )
   }
 }

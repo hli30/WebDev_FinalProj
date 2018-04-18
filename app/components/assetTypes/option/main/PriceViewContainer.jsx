@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import OptionChain from './priceView/OptionChain.jsx';
 import WatchList from './priceView/WatchList.jsx';
 import ExamineList from './priceView/ExamineList.jsx';
-import BlackScholes from './priceView/BlackScholes.jsx';
 import PropTypes from 'prop-types';
 
 export default class PriceViewContainer extends Component {
@@ -21,7 +20,7 @@ export default class PriceViewContainer extends Component {
 
   render () {
     return (
-      <div className="col-xs-9 main-shift-right">
+      <div className="col-11 reset-padding">
         <div id="option-chain" className="row">
           <OptionChain
             getOptionChain={this.props.getOptionChain}

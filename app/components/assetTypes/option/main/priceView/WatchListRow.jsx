@@ -25,7 +25,7 @@ export default class WatchListRow extends Component {
           {this.props.change}
         </td>
         <td className={this.props.pctChange >= 0 ? 'positive-num' : 'negative-num'}>
-          {this.props.pctChange}
+          {this.props.pctChange}%
         </td>
       </tr>
     )

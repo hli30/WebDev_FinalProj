@@ -9,6 +9,6 @@ A Single Page App made for Lighthouse Labs' final project. Built in two weeks, w
 
 ## ScreenShots
 
-!["Screenshot of option chain page"]()
+!["Screenshot of option chain page"](https://github.com/hli30/WebDev_FinalProj/blob/dev/docs/OptionChainView.png)
 
-!["screenshot of analysis page"]()
+!["screenshot of analysis page"](https://github.com/hli30/WebDev_FinalProj/blob/dev/docs/AnalysisView.png)

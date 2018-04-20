@@ -9,13 +9,7 @@ export default class RiskAnalysis extends Component {
     this.state = {
       btnClicked: false
     }
-
-    // this.tradeSubmitBtnHandler = this.tradeSubmitBtnHandler.bind(this);
   }
-
-  // tradeSubmitBtnHandler () {
-  //   this.setState({btnClicked: true});
-  // }
 
   render() {
     const rowOfSelectedOption = this.props.selectedTrades.map((option, index) =>
@@ -52,11 +46,6 @@ export default class RiskAnalysis extends Component {
                   {this.props.tradesTotal >= 0 ? ' CR' : ' DR'}
                 </td>
               </tr>
-              {/* <tr>
-                <td>
-                  <button className="btn btn-primary" onClick={this.tradeSubmitBtnHandler}>Submit</button>
-                </td>
-              </tr> */}
             </tbody>
           </table>
         </div>
@@ -66,5 +55,6 @@ export default class RiskAnalysis extends Component {
 }
 
 RiskAnalysis.propTypes = {
-  selectedTrades: PropTypes.array
+  selectedTrades: PropTypes.array,
+  tradesTotal: PropTypes.number
 }

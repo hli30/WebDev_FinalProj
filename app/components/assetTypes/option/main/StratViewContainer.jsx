@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import ExamineList from './priceView/ExamineList.jsx';
 import RiskAnalysis from './stratView/RiskAnalysis.jsx';
-// import RiskRewardChart from './stratView/RiskRewardChart.jsx';
 
 export default class StratViewContainer extends Component {
   constructor (props) {
@@ -16,7 +15,6 @@ export default class StratViewContainer extends Component {
   }
 
   addToSelectedTrades (optionObj) {
-    // console.log(optionObj);
     this.setState({selectedTrades: this.state.selectedTrades.concat(optionObj)}, () => {
       this.setState({tradesTotal: this.calculatePremiumSum()});
     });

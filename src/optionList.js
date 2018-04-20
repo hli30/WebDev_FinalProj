@@ -9,12 +9,9 @@ function buildOptionList(tradierList) {
   let list = tradierList;
   let optionList = [];
 
-  //console.log(`tradierList = ${list[0].symbol}`);
   for (let i = 0; i < list.length; i++) {
-    //console.log(`TradierList = ${tradierList[i].text}`);
 
     let index = findStrike(list[i].strike, optionList);
-   // console.log(`Strike = ${list[i].strike} and the Index = ${index}`);
     if (index >= 0) {
       if (list[i]['option_type'] === 'call') {
         optionList[index].call.last = list[i]['last'];
@@ -54,11 +51,9 @@ function buildOptionList(tradierList) {
         newOption.put.openInt = list[i]['open_interest'];
         newOption.put.symbol = list[i]['symbol'];
       }
-      // console.log(`Need a new Option: ${newOption}`);
       optionList.push(newOption);
     }
   }
-  // sort optionList;
   return optionList;
 }
 

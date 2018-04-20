@@ -11,7 +11,6 @@ export default class WatchListRow extends Component {
     e.preventDefault();
     this.props.setOptionDefaultFromWatchlistClick(e.target.innerText);
     this.props.getOptionChain(e.target.innerText, '2018-04-20');
-    console.log(e.target.innerText + ' clicked');
   }
 
   render () {

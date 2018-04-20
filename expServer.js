@@ -1,5 +1,5 @@
 
-const USER_ID = 1; // this will be removed when we have a valid user logging in and out
+const USER_ID = 1;
 const express = require('express');
 const request = require('superagent');
 const optionList = require('./src/optionList');

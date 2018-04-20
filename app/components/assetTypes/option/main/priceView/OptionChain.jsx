@@ -2,8 +2,6 @@ import React, {Component} from 'react';
 import OptionChainRow from './OptionChainRow.jsx';
 import PropTypes from 'prop-types';
 
-// require('../../../../../../styles/OptionChain.scss');
-
 export default class OptionChain extends Component {
   constructor (props) {
     super(props);

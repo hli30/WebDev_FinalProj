@@ -1,4 +1,14 @@
-## Base Setup
+# Express Option
 
-run `npm install` then `npm build`
-once its built, only need `npm start` from now on to start sever, runs on port 3000
+A Single Page App made for Lighthouse Labs' final project. Built in two weeks, with two people. It is a tool designed for retail option traders to streamline their decision making process. Features include, keeping a watchlist, view option price data, add options to a list for further analysis.
+
+## Technology
+
+- Front-end: React, Bootstrap, SASS, SuperAgent
+- Back-end: Node.js / Express server, PostgreSQL, Knex.js
+
+## ScreenShots
+
+!["Screenshot of option chain page"]()
+
+!["screenshot of analysis page"]()

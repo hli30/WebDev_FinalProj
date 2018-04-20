@@ -7,7 +7,7 @@ A Single Page App made for Lighthouse Labs' final project. Built in two weeks, w
 - Front-end: React, Bootstrap, SASS, SuperAgent
 - Back-end: Node.js / Express server, PostgreSQL, Knex.js
 
-## ScreenShots
+## Screenshots
 
 !["Screenshot of option chain page"](https://github.com/hli30/WebDev_FinalProj/blob/dev/docs/OptionChainView.png)
 

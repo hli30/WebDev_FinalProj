@@ -1,0 +1,25 @@
+#side-nav {
+  background-color: $sideNavColor;
+  border-right: 1px solid $borderColor;
+
+  li {
+    margin: auto;
+    padding-top: 1.5em;
+    width: 75%;
+    text-align: center;
+  }
+  .nav-icon {
+    font-size: 3em;
+  }
+}
+
+#top-nav {
+  background-color: $topNavColor;
+  span {
+    line-height: 1.5;
+    font-size: 30px;
+    span {
+      padding: 5px;
+    }
+  }
+}

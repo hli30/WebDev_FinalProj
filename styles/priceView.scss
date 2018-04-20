@@ -1,0 +1,91 @@
+.reset-padding {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.main {
+  position: fixed;
+  top: 14px;
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
+}
+
+#lists {
+  height: calc(45vh - 85px);
+  background-color: $containerColor;
+  border: 2px solid $borderColor;
+  margin: 5px;
+  padding: 5px;
+
+  #watchlist {
+    overflow: scroll;
+
+    .watchlist-header {
+      padding: 5px;
+
+      label {
+        font-size: 150%;
+        margin-right: 2em;
+      }
+      .input-field {
+        float: right;
+        width: 10em;
+        margin-right: 0.5em;
+      }
+    }
+  }
+
+  #examinelist {
+    overflow: scroll;
+
+    .examinelist-header {
+      padding: 5px;
+      padding-bottom: 0px;
+      label {
+        font-size: 150%;
+      }
+    }
+  }
+}
+
+#option-chain {
+  background-color: $containerColor;
+  border: 2px solid $borderColor;
+  margin: 5px;
+  padding: 5px;
+  height: calc(55vh);
+  overflow: scroll;
+
+  .option-chain-header {
+    padding: 5px;
+    padding-bottom: 0px;
+    display: flex;
+
+    label {
+      font-size: 150%;
+      margin-right: 2em;
+    }
+    .input-field {
+      width: 10em;
+      margin-right: 0.5em;
+    }
+    select {
+      margin-right: 0.5em;
+      height: 1.5em;
+    }
+  }
+
+  table {
+    th {
+      padding: 1px;
+      width: 72px;
+    }
+
+    #strike {
+      font-weight: bold;
+    }
+  }
+
+}
+

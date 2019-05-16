@@ -5,7 +5,7 @@ A Single Page App made for Lighthouse Labs' final project. Built in two weeks, w
 ## Technology
 
 - Front-end: React, Bootstrap, SASS, SuperAgent
-- Back-end: Node.js / Express server, PostgreSQL, Knex.js
+- Back-end: Node.js / Express server, PostgreSQL, Knex.js, TradierAPI
 
 ## Screenshots
 
